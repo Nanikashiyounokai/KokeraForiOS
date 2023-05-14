@@ -1,24 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="13E-XH-04P">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6af-nO-WE4">
+                                <rect key="frame" x="66" y="509" width="261" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6af-nO-WE4" secondAttribute="height" multiplier="261:35" id="YTV-I6-GEG"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="このアプリについて"/>
+                                <connections>
+                                    <segue destination="vPc-9D-W13" kind="show" id="jmt-8H-t1o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhh-Pw-xvR">
+                                <rect key="frame" x="66" y="429" width="261" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Uhh-Pw-xvR" secondAttribute="height" multiplier="261:35" id="e8q-7i-kv4"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="エンドレスゲーム"/>
+                                <connections>
+                                    <segue destination="jQd-YN-6pY" kind="show" id="k9Z-rG-IPs"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="柿落とし" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59D-Ef-WMX">
+                                <rect key="frame" x="76" y="233" width="241" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="59D-Ef-WMX" secondAttribute="height" multiplier="241:72" id="xdk-67-Rea"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6af-nO-WE4" firstAttribute="top" secondItem="Uhh-Pw-xvR" secondAttribute="bottom" constant="45" id="74H-Ir-zmc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6af-nO-WE4" secondAttribute="bottom" constant="274" id="JVp-nk-R0A"/>
+                            <constraint firstItem="59D-Ef-WMX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="130" id="Mwn-F8-bSK"/>
+                            <constraint firstItem="59D-Ef-WMX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pf8-Dg-FUV"/>
+                            <constraint firstItem="6af-nO-WE4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="deJ-8y-2fK"/>
+                            <constraint firstItem="Uhh-Pw-xvR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="umq-YD-gBM"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="U8e-Zh-Zj4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1040.4580152671756" y="-27.464788732394368"/>
+        </scene>
+        <!--Endless Game View Controller-->
+        <scene sceneID="LYd-zf-fwd">
+            <objects>
+                <viewController id="jQd-YN-6pY" customClass="EndlessGameViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="69Z-zd-RqF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="b5n-gA-cEu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GIw-zw-mqC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="be3-MY-jH2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1944" y="-24"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mQZ-uv-tW4">
+            <objects>
+                <viewController id="vPc-9D-W13" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9n4-uI-Iic">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuj-HX-bDi">
+                                <rect key="frame" x="159" y="343" width="0.0" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yuj-HX-bDi" secondAttribute="height" multiplier="1:1" id="8f5-xW-agd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="このアプリについて" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hj0-53-cDg">
+                                <rect key="frame" x="77.666666666666671" y="178" width="237.66666666666663" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="QVg-vg-N9y"/>
+                                    <constraint firstAttribute="width" secondItem="Hj0-53-cDg" secondAttribute="height" multiplier="237:32" id="ewn-W9-Rgf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPc-qr-ARo">
+                                <rect key="frame" x="18" y="256" width="357" height="174"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MPc-qr-ARo" secondAttribute="height" multiplier="119:58" id="Ia6-Aq-adF"/>
+                                    <constraint firstAttribute="width" secondItem="MPc-qr-ARo" secondAttribute="height" multiplier="359:175" id="fT8-8C-e8W"/>
+                                </constraints>
+                                <string key="text">杮落とし（こけらおとし）
+劇場が新築・改築後に初めて開場することを指す言葉で、
+新築・改装工事の最後の仕上げとして、材木を削った時に
+出る切り屑「こけら」を払い落としたことに由来する
+慣用句。
+
+このアプリはそんな杮（こけら）と柿（かき）を見分ける
+ゲームです。初公演を控えた歌舞伎役者さんに、柿ではなく
+柿を食べさせてあげましょう。
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="japan_kabuki" translatesAutoresizingMaskIntoConstraints="NO" id="TBJ-L8-YdE">
+                                <rect key="frame" x="201" y="438" width="176" height="245"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TBJ-L8-YdE" secondAttribute="height" multiplier="176:245" id="nuH-Be-MhH"/>
+                                    <constraint firstAttribute="height" constant="245" id="tQV-0B-GJH"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="SKartLOGO" translatesAutoresizingMaskIntoConstraints="NO" id="Zlr-eQ-Bn2">
+                                <rect key="frame" x="104" y="707" width="185" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Zlr-eQ-Bn2" secondAttribute="height" multiplier="185:22" id="fKt-II-Uo2"/>
+                                    <constraint firstAttribute="height" constant="22" id="pbn-CR-gb5"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VQD-0L-R5s"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MPc-qr-ARo" firstAttribute="top" secondItem="Hj0-53-cDg" secondAttribute="bottom" constant="46" id="8sW-W1-qTK"/>
+                            <constraint firstItem="Hj0-53-cDg" firstAttribute="centerX" secondItem="9n4-uI-Iic" secondAttribute="centerX" id="B0G-4n-aAC"/>
+                            <constraint firstItem="Hj0-53-cDg" firstAttribute="top" secondItem="VQD-0L-R5s" secondAttribute="top" constant="75" id="MX0-UM-kuM"/>
+                            <constraint firstItem="yuj-HX-bDi" firstAttribute="leading" secondItem="9n4-uI-Iic" secondAttribute="leading" constant="159" id="MgE-nR-RrD"/>
+                            <constraint firstItem="TBJ-L8-YdE" firstAttribute="leading" secondItem="VQD-0L-R5s" secondAttribute="leading" constant="201" id="RhR-vz-DY6"/>
+                            <constraint firstItem="VQD-0L-R5s" firstAttribute="bottom" secondItem="TBJ-L8-YdE" secondAttribute="bottom" constant="134" id="Rv1-ls-0d2"/>
+                            <constraint firstItem="VQD-0L-R5s" firstAttribute="bottom" secondItem="MPc-qr-ARo" secondAttribute="bottom" constant="387" id="WSx-oc-r5g"/>
+                            <constraint firstItem="Hj0-53-cDg" firstAttribute="centerX" secondItem="MPc-qr-ARo" secondAttribute="centerX" id="a72-ia-fHN"/>
+                            <constraint firstItem="TBJ-L8-YdE" firstAttribute="trailing" secondItem="9n4-uI-Iic" secondAttribute="trailingMargin" id="bKi-qu-xAw"/>
+                            <constraint firstItem="MPc-qr-ARo" firstAttribute="top" secondItem="yuj-HX-bDi" secondAttribute="top" constant="-87" id="fB9-wB-OHD"/>
+                            <constraint firstItem="Zlr-eQ-Bn2" firstAttribute="centerX" secondItem="MPc-qr-ARo" secondAttribute="centerX" id="h6G-5c-sgS"/>
+                            <constraint firstItem="VQD-0L-R5s" firstAttribute="bottom" secondItem="Zlr-eQ-Bn2" secondAttribute="bottom" constant="88" id="nSv-BN-UBM"/>
+                            <constraint firstItem="MPc-qr-ARo" firstAttribute="leading" secondItem="VQD-0L-R5s" secondAttribute="leading" constant="18" id="ovu-0e-HTj"/>
+                            <constraint firstItem="Zlr-eQ-Bn2" firstAttribute="leading" secondItem="VQD-0L-R5s" secondAttribute="leading" constant="104" id="sgX-BY-E3U"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zK6-7T-HVH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C17-Pz-tQv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1942.7480916030534" y="772.53521126760563"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7Hf-Xe-c2s">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="13E-XH-04P" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hPO-3X-XBV">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="p7V-f4-vIc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Th8-Yk-vlU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113.74045801526717" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SKartLOGO" width="360" height="112"/>
+        <image name="japan_kabuki" width="326" height="400"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		393ED5172A0E2DC300D7CCA0 /* EndlessGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393ED5162A0E2DC300D7CCA0 /* EndlessGameViewController.swift */; };
+		393ED5192A0E387200D7CCA0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393ED5182A0E387200D7CCA0 /* GameScene.swift */; };
 		39DA2BC82A074B6400F3BE24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA2BC72A074B6400F3BE24 /* AppDelegate.swift */; };
 		39DA2BCA2A074B6400F3BE24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA2BC92A074B6400F3BE24 /* SceneDelegate.swift */; };
 		39DA2BCC2A074B6400F3BE24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA2BCB2A074B6400F3BE24 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		393ED5162A0E2DC300D7CCA0 /* EndlessGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessGameViewController.swift; sourceTree = "<group>"; };
+		393ED5182A0E387200D7CCA0 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		39DA2BC42A074B6400F3BE24 /* FallingKokeraForiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingKokeraForiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DA2BC72A074B6400F3BE24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39DA2BC92A074B6400F3BE24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,10 +63,12 @@
 				39DA2BC72A074B6400F3BE24 /* AppDelegate.swift */,
 				39DA2BC92A074B6400F3BE24 /* SceneDelegate.swift */,
 				39DA2BCB2A074B6400F3BE24 /* ViewController.swift */,
+				393ED5162A0E2DC300D7CCA0 /* EndlessGameViewController.swift */,
 				39DA2BCD2A074B6400F3BE24 /* Main.storyboard */,
 				39DA2BD02A074B6800F3BE24 /* Assets.xcassets */,
 				39DA2BD22A074B6800F3BE24 /* LaunchScreen.storyboard */,
 				39DA2BD52A074B6800F3BE24 /* Info.plist */,
+				393ED5182A0E387200D7CCA0 /* GameScene.swift */,
 			);
 			path = FallingKokeraForiOS;
 			sourceTree = "<group>";
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				393ED5192A0E387200D7CCA0 /* GameScene.swift in Sources */,
 				39DA2BCC2A074B6400F3BE24 /* ViewController.swift in Sources */,
+				393ED5172A0E2DC300D7CCA0 /* EndlessGameViewController.swift in Sources */,
 				39DA2BC82A074B6400F3BE24 /* AppDelegate.swift in Sources */,
 				39DA2BCA2A074B6400F3BE24 /* SceneDelegate.swift in Sources */,
 			);
