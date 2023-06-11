@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390174202A290B4E003493E0 /* Stage1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3901741F2A290B4E003493E0 /* Stage1ViewController.swift */; };
 		393ED5172A0E2DC300D7CCA0 /* EndlessGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393ED5162A0E2DC300D7CCA0 /* EndlessGameViewController.swift */; };
 		393ED5192A0E387200D7CCA0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393ED5182A0E387200D7CCA0 /* GameScene.swift */; };
+		3977A41E2A28B42100FDE039 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3977A41D2A28B42000FDE039 /* CustomButton.swift */; };
+		3977A4222A28F9CE00FDE039 /* StageGameHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3977A4212A28F9CE00FDE039 /* StageGameHomeViewController.swift */; };
+		39BD1EEC2A2D859700E87B20 /* 1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BD1EEB2A2D859700E87B20 /* 1ViewController.swift */; };
 		39DA2BC82A074B6400F3BE24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA2BC72A074B6400F3BE24 /* AppDelegate.swift */; };
 		39DA2BCA2A074B6400F3BE24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA2BC92A074B6400F3BE24 /* SceneDelegate.swift */; };
 		39DA2BCC2A074B6400F3BE24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA2BCB2A074B6400F3BE24 /* ViewController.swift */; };
@@ -18,8 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3901741F2A290B4E003493E0 /* Stage1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage1ViewController.swift; sourceTree = "<group>"; };
 		393ED5162A0E2DC300D7CCA0 /* EndlessGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessGameViewController.swift; sourceTree = "<group>"; };
 		393ED5182A0E387200D7CCA0 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		3977A41D2A28B42000FDE039 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		3977A4212A28F9CE00FDE039 /* StageGameHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageGameHomeViewController.swift; sourceTree = "<group>"; };
+		39BD1EEB2A2D859700E87B20 /* 1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1ViewController.swift; sourceTree = "<group>"; };
 		39DA2BC42A074B6400F3BE24 /* FallingKokeraForiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingKokeraForiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DA2BC72A074B6400F3BE24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39DA2BC92A074B6400F3BE24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +52,7 @@
 		39DA2BBB2A074B6400F3BE24 = {
 			isa = PBXGroup;
 			children = (
+				39BD1EEB2A2D859700E87B20 /* 1ViewController.swift */,
 				39DA2BC62A074B6400F3BE24 /* FallingKokeraForiOS */,
 				39DA2BC52A074B6400F3BE24 /* Products */,
 			);
@@ -60,6 +69,9 @@
 		39DA2BC62A074B6400F3BE24 /* FallingKokeraForiOS */ = {
 			isa = PBXGroup;
 			children = (
+				3977A4212A28F9CE00FDE039 /* StageGameHomeViewController.swift */,
+				3901741F2A290B4E003493E0 /* Stage1ViewController.swift */,
+				3977A41D2A28B42000FDE039 /* CustomButton.swift */,
 				39DA2BC72A074B6400F3BE24 /* AppDelegate.swift */,
 				39DA2BC92A074B6400F3BE24 /* SceneDelegate.swift */,
 				39DA2BCB2A074B6400F3BE24 /* ViewController.swift */,
@@ -145,9 +157,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				393ED5192A0E387200D7CCA0 /* GameScene.swift in Sources */,
+				39BD1EEC2A2D859700E87B20 /* 1ViewController.swift in Sources */,
+				390174202A290B4E003493E0 /* Stage1ViewController.swift in Sources */,
 				39DA2BCC2A074B6400F3BE24 /* ViewController.swift in Sources */,
+				3977A41E2A28B42100FDE039 /* CustomButton.swift in Sources */,
 				393ED5172A0E2DC300D7CCA0 /* EndlessGameViewController.swift in Sources */,
 				39DA2BC82A074B6400F3BE24 /* AppDelegate.swift in Sources */,
+				3977A4222A28F9CE00FDE039 /* StageGameHomeViewController.swift in Sources */,
 				39DA2BCA2A074B6400F3BE24 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
