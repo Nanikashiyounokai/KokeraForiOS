@@ -215,7 +215,7 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="A38-EF-mYz" kind="show" id="lA2-sL-hR9"/>
+                                    <segue destination="JPs-ry-ogV" kind="show" id="v7w-ir-2PD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -271,6 +271,65 @@
             </objects>
             <point key="canvasLocation" x="1968.7022900763359" y="-694.36619718309862"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="NH5-fG-alr">
+            <objects>
+                <viewController id="JPs-ry-ogV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Aw5-yR-PVT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcJ-tD-ybL" customClass="CustomButton" customModule="FallingKokeraForiOS" customModuleProvider="target">
+                                <rect key="frame" x="42" y="188" width="308" height="42"/>
+                                <color key="backgroundColor" red="0.89808791880000005" green="0.89800959830000004" blue="0.91853839159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="ゲーム開始">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" systemColor="systemGray3Color"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="labelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="A38-EF-mYz" kind="show" id="F1h-TU-xbF"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="mr_kabuki" translatesAutoresizingMaskIntoConstraints="NO" id="psa-90-kvk">
+                                <rect key="frame" x="250" y="536" width="195" height="316"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="316" id="9od-df-KYA"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="how_to_play" translatesAutoresizingMaskIntoConstraints="NO" id="9Nj-qt-Lt7">
+                                <rect key="frame" x="-107" y="131" width="500" height="500"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1aO-MO-5gT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fcJ-tD-ybL" firstAttribute="leading" secondItem="1aO-MO-5gT" secondAttribute="leading" constant="42" id="41y-Gx-4e8"/>
+                            <constraint firstItem="psa-90-kvk" firstAttribute="leading" secondItem="1aO-MO-5gT" secondAttribute="leading" constant="250" id="Whv-Ar-MhV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="psa-90-kvk" secondAttribute="trailing" constant="-68" id="YeL-yo-jpE"/>
+                            <constraint firstItem="fcJ-tD-ybL" firstAttribute="top" secondItem="1aO-MO-5gT" secondAttribute="top" constant="85" id="cG1-ge-U3u"/>
+                            <constraint firstItem="9Nj-qt-Lt7" firstAttribute="trailing" secondItem="1aO-MO-5gT" secondAttribute="trailing" id="gWH-9I-JjM"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="psa-90-kvk" secondAttribute="bottom" constant="-34" id="h27-do-Qca"/>
+                            <constraint firstItem="fcJ-tD-ybL" firstAttribute="centerX" secondItem="Aw5-yR-PVT" secondAttribute="centerX" id="o0y-Xo-ysN"/>
+                            <constraint firstItem="9Nj-qt-Lt7" firstAttribute="top" secondItem="1aO-MO-5gT" secondAttribute="top" constant="28" id="wNR-1Z-YR0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lrE-iR-lvo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MJ3-so-rHp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1951.9083969465648" y="-1402.1126760563382"/>
+        </scene>
         <!--Stage1 View Controller-->
         <scene sceneID="VT0-mM-hLc">
             <objects>
@@ -285,7 +344,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHX-Y9-Vhh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2946" y="-1323"/>
+            <point key="canvasLocation" x="2941" y="-1402"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Zyq-En-YKU">
+            <objects>
+                <viewController storyboardIdentifier="gameclear" id="RWO-Sb-VvL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ea6-7E-zv0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="X3O-Rc-egD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kci-z3-c3y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3882" y="-1402"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="O4i-rZ-14J">
+            <objects>
+                <viewController storyboardIdentifier="gameover" id="rgI-tt-dZb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lad-VP-UGv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Kym-30-Zon"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="941-Yj-Uq9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3864" y="-738"/>
         </scene>
         <!--Endless Game View Controller-->
         <scene sceneID="LYd-zf-fwd">
@@ -404,6 +493,7 @@
     </scenes>
     <resources>
         <image name="SKartLOGO" width="360" height="112"/>
+        <image name="how_to_play" width="500" height="500"/>
         <image name="kokera_nomal" width="100" height="98"/>
         <image name="mr_kabuki" width="393" height="631"/>
         <image name="title" width="200" height="114"/>
