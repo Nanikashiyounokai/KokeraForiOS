@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="top" id="BYZ-38-t0r" customClass="ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,6 +129,9 @@
                                 <state key="normal" title="弍">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="7ZT-Eo-1KB" kind="show" id="Mbi-OJ-SXs"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wk-pl-ADP">
                                 <rect key="frame" x="261" y="268" width="94" height="92"/>
@@ -138,6 +141,9 @@
                                 <state key="normal" title="参">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="z2o-MX-1jl" kind="show" id="bUa-tD-eos"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20n-h9-ql4">
                                 <rect key="frame" x="35" y="381" width="94" height="92"/>
@@ -150,6 +156,9 @@
                                 <state key="normal" title="肆">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="lJM-Yj-c9d" kind="show" id="xQY-s5-CZk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4L7-rd-WKT">
                                 <rect key="frame" x="146" y="381" width="94" height="92"/>
@@ -271,6 +280,54 @@
             </objects>
             <point key="canvasLocation" x="1968.7022900763359" y="-694.36619718309862"/>
         </scene>
+        <!--Stage2 View Controller-->
+        <scene sceneID="toQ-Kw-CNg">
+            <objects>
+                <viewController id="7ZT-Eo-1KB" customClass="Stage2ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="11P-p2-PXv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="wFN-BA-Nsd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yOP-rT-qFm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDF-gH-gQl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3873" y="-1402"/>
+        </scene>
+        <!--Stage4 View Controller-->
+        <scene sceneID="pEW-rh-zHP">
+            <objects>
+                <viewController id="lJM-Yj-c9d" customClass="Stage4ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EXP-sb-JIH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="xdQ-2x-TXf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TFD-nu-GkA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KtU-Qt-IFx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2931" y="-694"/>
+        </scene>
+        <!--Stage3 View Controller-->
+        <scene sceneID="c6X-Yk-fKh">
+            <objects>
+                <viewController id="z2o-MX-1jl" customClass="Stage3ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vDu-88-E8b">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Auh-ri-diK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tnp-2B-kvT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tt2-3i-eh4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4784" y="-1402"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="NH5-fG-alr">
             <objects>
@@ -346,35 +403,189 @@
             </objects>
             <point key="canvasLocation" x="2941" y="-1402"/>
         </scene>
-        <!--View Controller-->
+        <!--Clear View Controller-->
         <scene sceneID="Zyq-En-YKU">
             <objects>
-                <viewController storyboardIdentifier="gameclear" id="RWO-Sb-VvL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameclear" id="RWO-Sb-VvL" customClass="ClearViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ea6-7E-zv0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6g-xX-Cdq" customClass="CustomButton" customModule="FallingKokeraForiOS" customModuleProvider="target">
+                                <rect key="frame" x="57" y="676" width="279" height="42"/>
+                                <color key="backgroundColor" red="0.89808791880000005" green="0.89800959830000004" blue="0.91853839159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="D6g-xX-Cdq" secondAttribute="height" multiplier="93:14" id="RRU-aJ-kzp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="タイトル画面に戻る">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" systemColor="systemGray3Color"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="labelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="home:" destination="RWO-Sb-VvL" eventType="touchUpInside" id="knw-1w-kFU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3d5-ek-aQo" customClass="CustomButton" customModule="FallingKokeraForiOS" customModuleProvider="target">
+                                <rect key="frame" x="57" y="594" width="279" height="42"/>
+                                <color key="backgroundColor" red="0.89808791880000005" green="0.89800959830000004" blue="0.91853839159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="次のステージ（未実装）">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" systemColor="systemGray3Color"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="labelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextgame:" destination="RWO-Sb-VvL" eventType="touchUpInside" id="qim-Tg-Xj4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="成功!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N51-bX-09w">
+                                <rect key="frame" x="91" y="159" width="211" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="83"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="kabuki_upper" translatesAutoresizingMaskIntoConstraints="NO" id="vHF-bh-PqC">
+                                <rect key="frame" x="196" y="375" width="181" height="211"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="211" id="6jS-oU-9jj"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="X3O-Rc-egD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X3O-Rc-egD" firstAttribute="bottom" secondItem="D6g-xX-Cdq" secondAttribute="bottom" constant="100" id="0eR-YC-Z16"/>
+                            <constraint firstItem="3d5-ek-aQo" firstAttribute="centerX" secondItem="ea6-7E-zv0" secondAttribute="centerX" id="4Tf-KY-cXb"/>
+                            <constraint firstItem="D6g-xX-Cdq" firstAttribute="centerX" secondItem="ea6-7E-zv0" secondAttribute="centerX" id="5op-oh-v0w"/>
+                            <constraint firstItem="N51-bX-09w" firstAttribute="top" secondItem="X3O-Rc-egD" secondAttribute="top" constant="100" id="6ur-Rp-fpE"/>
+                            <constraint firstItem="D6g-xX-Cdq" firstAttribute="top" secondItem="3d5-ek-aQo" secondAttribute="bottom" constant="40" id="T2L-dD-zth"/>
+                            <constraint firstItem="3d5-ek-aQo" firstAttribute="top" secondItem="vHF-bh-PqC" secondAttribute="bottom" constant="8" id="TQQ-z9-Tzk"/>
+                            <constraint firstItem="vHF-bh-PqC" firstAttribute="trailing" secondItem="ea6-7E-zv0" secondAttribute="trailingMargin" id="TYf-Q1-Mu7"/>
+                            <constraint firstItem="N51-bX-09w" firstAttribute="leading" secondItem="X3O-Rc-egD" secondAttribute="leading" constant="91" id="dC9-VP-Sus"/>
+                            <constraint firstItem="vHF-bh-PqC" firstAttribute="leading" secondItem="X3O-Rc-egD" secondAttribute="leading" constant="196" id="p1A-dZ-4Uf"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kci-z3-c3y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3882" y="-1402"/>
+            <point key="canvasLocation" x="2931" y="-2146"/>
         </scene>
-        <!--View Controller-->
+        <!--Gameover Kaki View Controller-->
         <scene sceneID="O4i-rZ-14J">
             <objects>
-                <viewController storyboardIdentifier="gameover" id="rgI-tt-dZb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameover_kaki" id="rgI-tt-dZb" customClass="Gameover_Kaki_ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lad-VP-UGv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldn-4N-FDQ" customClass="CustomButton" customModule="FallingKokeraForiOS" customModuleProvider="target">
+                                <rect key="frame" x="42" y="565" width="308" height="42"/>
+                                <color key="backgroundColor" red="0.89808791880000005" green="0.89800959830000004" blue="0.91853839159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="リトライ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" systemColor="systemGray3Color"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="labelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="retry:" destination="rgI-tt-dZb" eventType="touchUpInside" id="3JN-aT-UJk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFG-Ry-AGx" customClass="CustomButton" customModule="FallingKokeraForiOS" customModuleProvider="target">
+                                <rect key="frame" x="42" y="650" width="308" height="42"/>
+                                <color key="backgroundColor" red="0.89808791880000005" green="0.89800959830000004" blue="0.91853839159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="QfE-QF-s6C"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="タイトル画面に戻る">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" systemColor="systemGray3Color"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="labelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="home:" destination="rgI-tt-dZb" eventType="touchUpInside" id="zSC-t6-0lZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="残念…" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJR-sR-QkI">
+                                <rect key="frame" x="80" y="159" width="216" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="83"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="gameover_kaki" translatesAutoresizingMaskIntoConstraints="NO" id="TB7-kN-Q1S">
+                                <rect key="frame" x="16" y="234" width="205" height="252"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="kabuki_upper" translatesAutoresizingMaskIntoConstraints="NO" id="iiR-1h-RL2">
+                                <rect key="frame" x="196" y="333" width="181" height="211"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="211" id="ktr-9z-fEu"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Kym-30-Zon"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TB7-kN-Q1S" firstAttribute="leading" secondItem="Lad-VP-UGv" secondAttribute="leadingMargin" id="22c-gA-I2A"/>
+                            <constraint firstItem="iiR-1h-RL2" firstAttribute="leading" secondItem="Kym-30-Zon" secondAttribute="leading" constant="196" id="6EK-II-NcC"/>
+                            <constraint firstItem="ldn-4N-FDQ" firstAttribute="top" secondItem="TB7-kN-Q1S" secondAttribute="bottom" constant="79" id="8mU-pi-x0t"/>
+                            <constraint firstItem="Kym-30-Zon" firstAttribute="trailing" secondItem="TB7-kN-Q1S" secondAttribute="trailing" constant="172" id="N17-Rd-3pt"/>
+                            <constraint firstItem="iiR-1h-RL2" firstAttribute="trailing" secondItem="Lad-VP-UGv" secondAttribute="trailingMargin" id="Qqm-3v-7jJ"/>
+                            <constraint firstItem="WJR-sR-QkI" firstAttribute="leading" secondItem="Kym-30-Zon" secondAttribute="leading" constant="80" id="Rt7-7m-K8v"/>
+                            <constraint firstItem="gFG-Ry-AGx" firstAttribute="centerX" secondItem="Lad-VP-UGv" secondAttribute="centerX" id="Z39-kZ-qcS"/>
+                            <constraint firstItem="ldn-4N-FDQ" firstAttribute="top" secondItem="iiR-1h-RL2" secondAttribute="bottom" constant="21" id="aEV-YR-c2f"/>
+                            <constraint firstItem="iiR-1h-RL2" firstAttribute="top" secondItem="WJR-sR-QkI" secondAttribute="bottom" constant="74" id="gGH-Ej-ppY"/>
+                            <constraint firstItem="Kym-30-Zon" firstAttribute="bottom" secondItem="gFG-Ry-AGx" secondAttribute="bottom" constant="126" id="nnr-SZ-1kU"/>
+                            <constraint firstItem="ldn-4N-FDQ" firstAttribute="trailing" secondItem="gFG-Ry-AGx" secondAttribute="trailing" id="oIK-Mp-QhP"/>
+                            <constraint firstItem="WJR-sR-QkI" firstAttribute="top" secondItem="Kym-30-Zon" secondAttribute="top" constant="100" id="qmz-30-1Bz"/>
+                            <constraint firstItem="gFG-Ry-AGx" firstAttribute="top" secondItem="ldn-4N-FDQ" secondAttribute="bottom" constant="43" id="u2E-D9-yiF"/>
+                            <constraint firstItem="ldn-4N-FDQ" firstAttribute="leading" secondItem="Kym-30-Zon" secondAttribute="leading" constant="42" id="v0S-1C-djG"/>
+                            <constraint firstItem="TB7-kN-Q1S" firstAttribute="top" secondItem="Kym-30-Zon" secondAttribute="top" constant="175" id="w9K-kK-DLX"/>
+                            <constraint firstItem="ldn-4N-FDQ" firstAttribute="leading" secondItem="gFG-Ry-AGx" secondAttribute="leading" id="zhY-Hf-iEb"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="941-Yj-Uq9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3864" y="-738"/>
+            <point key="canvasLocation" x="3873" y="-2146"/>
         </scene>
         <!--Endless Game View Controller-->
         <scene sceneID="LYd-zf-fwd">
@@ -390,7 +601,107 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="be3-MY-jH2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2744" y="-27"/>
+            <point key="canvasLocation" x="1040" y="901"/>
+        </scene>
+        <!--Gameover Kokera View Controller-->
+        <scene sceneID="JmT-T9-Ngl">
+            <objects>
+                <viewController storyboardIdentifier="gameover_kokera" id="ZyB-UP-2Aq" customClass="Gameover_Kokera_ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="od1-Qu-S1Y">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bS1-RQ-F9Z" customClass="CustomButton" customModule="FallingKokeraForiOS" customModuleProvider="target">
+                                <rect key="frame" x="42" y="646.66666666666663" width="309" height="42"/>
+                                <color key="backgroundColor" red="0.89808791880000005" green="0.89800959830000004" blue="0.91853839159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="pR2-l4-YyH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="タイトル画面に戻る">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" systemColor="systemGray3Color"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="labelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="home:" destination="ZyB-UP-2Aq" eventType="touchUpInside" id="KuJ-ly-Eot"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="残念…" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmk-YA-5iG">
+                                <rect key="frame" x="80" y="159" width="216" height="99.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="83"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="gameover_kokera" translatesAutoresizingMaskIntoConstraints="NO" id="Cil-Vx-lh5">
+                                <rect key="frame" x="0.0" y="198" width="221" height="307"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="kabuki_upper" translatesAutoresizingMaskIntoConstraints="NO" id="xOM-JO-ku2">
+                                <rect key="frame" x="196" y="320.66666666666669" width="181" height="211.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="211" id="Nam-qV-S65"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ecx-FH-ojV" customClass="CustomButton" customModule="FallingKokeraForiOS" customModuleProvider="target">
+                                <rect key="frame" x="42" y="565" width="309" height="42"/>
+                                <color key="backgroundColor" red="0.89808791880000005" green="0.89800959830000004" blue="0.91853839159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="vdA-2i-Gp1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="リトライ">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" systemColor="systemGray3Color"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="labelColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="retry:" destination="ZyB-UP-2Aq" eventType="touchUpInside" id="p7D-bB-sOl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RfT-JW-JHl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ecx-FH-ojV" firstAttribute="top" secondItem="Cil-Vx-lh5" secondAttribute="bottom" constant="60" id="0Eg-VA-55u"/>
+                            <constraint firstItem="Lmk-YA-5iG" firstAttribute="leading" secondItem="RfT-JW-JHl" secondAttribute="leading" constant="80" id="3Ds-Bc-uE4"/>
+                            <constraint firstItem="Lmk-YA-5iG" firstAttribute="top" secondItem="RfT-JW-JHl" secondAttribute="top" constant="100" id="4hR-l2-XUB"/>
+                            <constraint firstItem="xOM-JO-ku2" firstAttribute="centerY" secondItem="od1-Qu-S1Y" secondAttribute="centerY" id="61y-BF-500"/>
+                            <constraint firstItem="Ecx-FH-ojV" firstAttribute="centerX" secondItem="od1-Qu-S1Y" secondAttribute="centerX" id="7rd-zj-ekJ"/>
+                            <constraint firstItem="Ecx-FH-ojV" firstAttribute="trailing" secondItem="bS1-RQ-F9Z" secondAttribute="trailing" id="91P-DN-TVu"/>
+                            <constraint firstItem="Ecx-FH-ojV" firstAttribute="leading" secondItem="bS1-RQ-F9Z" secondAttribute="leading" id="B6O-Ud-PaC"/>
+                            <constraint firstItem="xOM-JO-ku2" firstAttribute="trailing" secondItem="od1-Qu-S1Y" secondAttribute="trailingMargin" id="BvL-rA-Zge"/>
+                            <constraint firstItem="Ecx-FH-ojV" firstAttribute="leading" secondItem="RfT-JW-JHl" secondAttribute="leading" constant="42" id="D3t-Fe-Bfl"/>
+                            <constraint firstItem="RfT-JW-JHl" firstAttribute="trailing" secondItem="Cil-Vx-lh5" secondAttribute="trailing" constant="172" id="XFr-e4-gju"/>
+                            <constraint firstItem="xOM-JO-ku2" firstAttribute="leading" secondItem="RfT-JW-JHl" secondAttribute="leading" constant="196" id="aiZ-1I-zR0"/>
+                            <constraint firstItem="Cil-Vx-lh5" firstAttribute="top" secondItem="RfT-JW-JHl" secondAttribute="top" constant="139" id="gY0-1L-mfH"/>
+                            <constraint firstItem="bS1-RQ-F9Z" firstAttribute="top" secondItem="Ecx-FH-ojV" secondAttribute="bottom" constant="39.666666666666629" id="lVh-bH-0bo"/>
+                            <constraint firstItem="xOM-JO-ku2" firstAttribute="top" secondItem="Lmk-YA-5iG" secondAttribute="bottom" constant="62" id="pHD-Kz-Lk7"/>
+                            <constraint firstItem="Cil-Vx-lh5" firstAttribute="leading" secondItem="od1-Qu-S1Y" secondAttribute="leadingMargin" constant="-16" id="pXa-w8-JOo"/>
+                            <constraint firstItem="Ecx-FH-ojV" firstAttribute="top" secondItem="xOM-JO-ku2" secondAttribute="bottom" constant="33.333333333333258" id="rTw-7f-3Jf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ojy-Lo-Uyk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4785" y="-2146"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mQZ-uv-tW4">
@@ -470,7 +781,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C17-Pz-tQv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1942.7480916030534" y="772.53521126760563"/>
+            <point key="canvasLocation" x="-68" y="901"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Hf-Xe-c2s">
@@ -493,7 +804,10 @@
     </scenes>
     <resources>
         <image name="SKartLOGO" width="360" height="112"/>
+        <image name="gameover_kaki" width="500" height="500"/>
+        <image name="gameover_kokera" width="500" height="500"/>
         <image name="how_to_play" width="500" height="500"/>
+        <image name="kabuki_upper" width="393" height="426"/>
         <image name="kokera_nomal" width="100" height="98"/>
         <image name="mr_kabuki" width="393" height="631"/>
         <image name="title" width="200" height="114"/>
