@@ -3,7 +3,7 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
-class Stage4ViewController: UIViewController {
+class Stage5ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +17,7 @@ class Stage4ViewController: UIViewController {
     }
 }
 
-class StageScene4: SKScene, SKPhysicsContactDelegate {
+class StageScene5: SKScene, SKPhysicsContactDelegate {
     
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!

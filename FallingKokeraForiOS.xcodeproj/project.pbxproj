@@ -25,6 +25,7 @@
 		39DA2BCF2A074B6400F3BE24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39DA2BCD2A074B6400F3BE24 /* Main.storyboard */; };
 		39DA2BD12A074B6800F3BE24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39DA2BD02A074B6800F3BE24 /* Assets.xcassets */; };
 		39DA2BD42A074B6800F3BE24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39DA2BD22A074B6800F3BE24 /* LaunchScreen.storyboard */; };
+		95BB071A2A4EC61700C64E00 /* Stage5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		39DA2BD02A074B6800F3BE24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39DA2BD32A074B6800F3BE24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39DA2BD52A074B6800F3BE24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage5ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				396D17802A3E962F0079F709 /* Stage2ViewController.swift */,
 				396D17822A3EA6BB0079F709 /* Stage3ViewController.swift */,
 				3915B03A2A4309BB00CC754F /* Stage4ViewController.swift */,
+				95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */,
 				3977A41D2A28B42000FDE039 /* CustomButton.swift */,
 				39DA2BC72A074B6400F3BE24 /* AppDelegate.swift */,
 				39DA2BC92A074B6400F3BE24 /* SceneDelegate.swift */,
@@ -187,6 +190,7 @@
 				39DA2BC82A074B6400F3BE24 /* AppDelegate.swift in Sources */,
 				3977A4222A28F9CE00FDE039 /* StageGameHomeViewController.swift in Sources */,
 				39DA2BCA2A074B6400F3BE24 /* SceneDelegate.swift in Sources */,
+				95BB071A2A4EC61700C64E00 /* Stage5ViewController.swift in Sources */,
 				39CEDA7D2A3D5E080047A95F /* Gameover_Kaki_ViewController.swift in Sources */,
 				3915B03B2A4309BB00CC754F /* Stage4ViewController.swift in Sources */,
 			);
