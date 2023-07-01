@@ -92,7 +92,7 @@ class StageScene4: SKScene, SKPhysicsContactDelegate {
     func generateImages() {
         let isKaki = Bool.random()
 
-        let spriteName = isKaki ? "kaki_small" : "kokera_small"
+        let spriteName = isKaki ? "kaki_nomal" : "kokera_nomal"
         let sprite = SKSpriteNode(imageNamed: spriteName)
 
         let xRange = sprite.size.width / 2 + 25...size.width - sprite.size.width / 2 - 25
@@ -120,17 +120,6 @@ class StageScene4: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.collisionBitMask = 0
         sprite.physicsBody?.contactTestBitMask = PhysicsCategory.player.rawValue
         sprite.physicsBody?.isDynamic = true
-
-//        let minWaitDuration = 1.0
-//        let maxWaitDuration = 3.0
-//        let waitDuration = Double.random(in: minWaitDuration...maxWaitDuration)
-//        let waitAction = SKAction.wait(forDuration: waitDuration)
-//
-//        let generateAction = SKAction.run { [weak self] in
-//            self?.generateImages()
-//        }
-//        let sequenceAction = SKAction.sequence([waitAction, generateAction])
-//        run(sequenceAction)
     }
 
 
