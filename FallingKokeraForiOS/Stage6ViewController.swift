@@ -3,7 +3,7 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
-class Stage5ViewController: UIViewController {
+class Stage6ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,13 +11,13 @@ class Stage5ViewController: UIViewController {
         let skView = SKView(frame: view.bounds)
         view.addSubview(skView)
 
-        let scene = StageScene5(size: skView.bounds.size)
+        let scene = StageScene6(size: skView.bounds.size)
         scene.scaleMode = .aspectFill
         skView.presentScene(scene)
     }
 }
 
-class StageScene5: SKScene, SKPhysicsContactDelegate {
+class StageScene6: SKScene, SKPhysicsContactDelegate {
     
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!
@@ -92,7 +92,7 @@ class StageScene5: SKScene, SKPhysicsContactDelegate {
     func generateImages() {
         let isKaki = Bool.random()
 
-        let spriteName = isKaki ? "kaki_small" : "kokera_small"
+        let spriteName = isKaki ? "kaki_nomal" : "kokera_nomal"
         let sprite = SKSpriteNode(imageNamed: spriteName)
 
         let xRange = sprite.size.width / 2 + 25...size.width - sprite.size.width / 2 - 25
@@ -109,10 +109,51 @@ class StageScene5: SKScene, SKPhysicsContactDelegate {
         kakiList.append(sprite)
 
         let destinationY = -sprite.size.height / 2
-        let moveAction = SKAction.moveTo(y: destinationY, duration: 6)
-        let removeAction = SKAction.removeFromParent()
-        let sequence: SKAction = SKAction.sequence([moveAction, removeAction])
+        let moveVerticalAction = SKAction.moveTo(y: destinationY, duration: 6)
+        
+        // 動きの揺れ範囲を定義します。
+        let swayRange: CGFloat = 300
+        // 画像が左右に揺れるパターンを定義します。
+        let swayActionPattern = SKAction.sequence([
+            SKAction.moveBy(x: -swayRange, y: 0, duration: 0.5),
+            SKAction.moveBy(x: swayRange * 2, y: 0, duration: 1.0),
+            SKAction.moveBy(x: -swayRange, y: 0, duration: 0.5)
+        ])
+        let swayAction = SKAction.repeatForever(swayActionPattern)
 
+        // 画面の端の位置を設定する
+        let leftBoundary = -self.size.width / 2
+        let rightBoundary = self.size.width / 2
+
+        // スプライトの幅を取得する
+        let spriteWidth = StageScene6().frame.width
+
+        // Check and reverse direction if sprite hits the edges of the screen
+        let boundaryCheckAction = SKAction.customAction(withDuration: 0) { node, elapsedTime in
+            if node.position.x - spriteWidth / 2 < leftBoundary {
+                node.position.x = leftBoundary + spriteWidth / 2
+                node.run(SKAction.sequence([
+                    SKAction.moveBy(x: swayRange * 2, y: 0, duration: 1.0),
+                    SKAction.moveBy(x: -swayRange, y: 0, duration: 0.5)
+                ]))
+            } else if node.position.x + spriteWidth / 2 > rightBoundary {
+                node.position.x = rightBoundary - spriteWidth / 2
+                node.run(SKAction.sequence([
+                    SKAction.moveBy(x: -swayRange, y: 0, duration: 0.5),
+                    SKAction.moveBy(x: swayRange * 2, y: 0, duration: 1.0)
+                ]))
+            }
+        }
+
+
+
+
+
+        let actionGroup = SKAction.group([swayAction, boundaryCheckAction])
+        let combinedAction = SKAction.group([moveVerticalAction, actionGroup])
+        
+        let removeAction = SKAction.removeFromParent()
+        let sequence: SKAction = SKAction.sequence([combinedAction, removeAction])
         sprite.run(sequence)
 
         sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
@@ -121,6 +162,7 @@ class StageScene5: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.contactTestBitMask = PhysicsCategory.player.rawValue
         sprite.physicsBody?.isDynamic = true
     }
+
 
 
     func didBegin(_ contact: SKPhysicsContact) {
@@ -181,4 +223,3 @@ class StageScene5: SKScene, SKPhysicsContactDelegate {
         }
     }
 }
-

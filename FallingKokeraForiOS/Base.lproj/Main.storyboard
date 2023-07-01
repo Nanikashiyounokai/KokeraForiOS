@@ -181,6 +181,9 @@
                                 <state key="normal" title="陸">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="HgY-51-V1j" kind="show" id="Pr1-G5-2Qo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLg-qa-EX1">
                                 <rect key="frame" x="37" y="492" width="94" height="92"/>
@@ -339,6 +342,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tzm-D4-whD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3873" y="-694"/>
+        </scene>
+        <!--Stage6 View Controller-->
+        <scene sceneID="sQk-Ul-4bJ">
+            <objects>
+                <viewController id="HgY-51-V1j" customClass="Stage6ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4sm-uf-kic">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="VXl-1z-exI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JLR-E2-vMa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CBv-rb-Yma" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4784" y="-694"/>
         </scene>
         <!--Stage3 View Controller-->
         <scene sceneID="c6X-Yk-fKh">
