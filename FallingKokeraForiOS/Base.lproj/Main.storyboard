@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="13E-XH-04P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="13E-XH-04P">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -312,7 +311,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="b4B-EN-r9D">
-                                <rect key="frame" x="179" y="103" width="393" height="852"/>
+                                <rect key="frame" x="178" y="100" width="393" height="852"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <viewLayoutGuide key="safeArea" id="lFK-yx-19p"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -517,6 +516,12 @@
                                     <constraint firstAttribute="height" constant="211" id="6jS-oU-9jj"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="gameclear" translatesAutoresizingMaskIntoConstraints="NO" id="6Kx-gE-a7m">
+                                <rect key="frame" x="0.0" y="267" width="230" height="213"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="213" id="Ao1-Xr-4XB"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X3O-Rc-egD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -525,9 +530,12 @@
                             <constraint firstItem="3d5-ek-aQo" firstAttribute="centerX" secondItem="ea6-7E-zv0" secondAttribute="centerX" id="4Tf-KY-cXb"/>
                             <constraint firstItem="D6g-xX-Cdq" firstAttribute="centerX" secondItem="ea6-7E-zv0" secondAttribute="centerX" id="5op-oh-v0w"/>
                             <constraint firstItem="N51-bX-09w" firstAttribute="top" secondItem="X3O-Rc-egD" secondAttribute="top" constant="100" id="6ur-Rp-fpE"/>
+                            <constraint firstItem="X3O-Rc-egD" firstAttribute="trailing" secondItem="6Kx-gE-a7m" secondAttribute="trailing" constant="163" id="Oiz-Dq-6Gq"/>
                             <constraint firstItem="D6g-xX-Cdq" firstAttribute="top" secondItem="3d5-ek-aQo" secondAttribute="bottom" constant="40" id="T2L-dD-zth"/>
                             <constraint firstItem="3d5-ek-aQo" firstAttribute="top" secondItem="vHF-bh-PqC" secondAttribute="bottom" constant="8" id="TQQ-z9-Tzk"/>
                             <constraint firstItem="vHF-bh-PqC" firstAttribute="trailing" secondItem="ea6-7E-zv0" secondAttribute="trailingMargin" id="TYf-Q1-Mu7"/>
+                            <constraint firstItem="6Kx-gE-a7m" firstAttribute="top" secondItem="N51-bX-09w" secondAttribute="bottom" constant="8" id="WGB-zx-GNY"/>
+                            <constraint firstItem="6Kx-gE-a7m" firstAttribute="leading" secondItem="X3O-Rc-egD" secondAttribute="leading" id="XCl-QH-o4M"/>
                             <constraint firstItem="N51-bX-09w" firstAttribute="leading" secondItem="X3O-Rc-egD" secondAttribute="leading" constant="91" id="dC9-VP-Sus"/>
                             <constraint firstItem="vHF-bh-PqC" firstAttribute="leading" secondItem="X3O-Rc-egD" secondAttribute="leading" constant="196" id="p1A-dZ-4Uf"/>
                         </constraints>
@@ -535,7 +543,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kci-z3-c3y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2931" y="-2146"/>
+            <point key="canvasLocation" x="2930.5343511450383" y="-2146.4788732394368"/>
         </scene>
         <!--Gameover Kaki View Controller-->
         <scene sceneID="O4i-rZ-14J">
@@ -851,6 +859,7 @@
     </scenes>
     <resources>
         <image name="SKartLOGO" width="360" height="112"/>
+        <image name="gameclear" width="500" height="500"/>
         <image name="gameover_kaki" width="500" height="500"/>
         <image name="gameover_kokera" width="500" height="500"/>
         <image name="how_to_play" width="500" height="500"/>

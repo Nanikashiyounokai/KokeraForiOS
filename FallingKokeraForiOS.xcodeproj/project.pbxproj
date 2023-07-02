@@ -25,11 +25,13 @@
 		39DA2BCF2A074B6400F3BE24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39DA2BCD2A074B6400F3BE24 /* Main.storyboard */; };
 		39DA2BD12A074B6800F3BE24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39DA2BD02A074B6800F3BE24 /* Assets.xcassets */; };
 		39DA2BD42A074B6800F3BE24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39DA2BD22A074B6800F3BE24 /* LaunchScreen.storyboard */; };
+		93EDA3F5D6E962F09A7A80D1 /* Pods_FallingKokeraForiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F12229F183D0B0515BD8791A /* Pods_FallingKokeraForiOS.framework */; };
 		957AD81D2A4FB7C800DF61B9 /* Stage6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AD81C2A4FB7C800DF61B9 /* Stage6ViewController.swift */; };
 		95BB071A2A4EC61700C64E00 /* Stage5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2CF7FE02C5EDC6DF2B89CA9A /* Pods-FallingKokeraForiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FallingKokeraForiOS.release.xcconfig"; path = "Target Support Files/Pods-FallingKokeraForiOS/Pods-FallingKokeraForiOS.release.xcconfig"; sourceTree = "<group>"; };
 		3901741F2A290B4E003493E0 /* Stage1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage1ViewController.swift; sourceTree = "<group>"; };
 		3915B03A2A4309BB00CC754F /* Stage4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage4ViewController.swift; sourceTree = "<group>"; };
 		393ED5162A0E2DC300D7CCA0 /* EndlessGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessGameViewController.swift; sourceTree = "<group>"; };
@@ -50,8 +52,10 @@
 		39DA2BD02A074B6800F3BE24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39DA2BD32A074B6800F3BE24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39DA2BD52A074B6800F3BE24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C6A7D02BD41082A191C12E8 /* Pods-FallingKokeraForiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FallingKokeraForiOS.debug.xcconfig"; path = "Target Support Files/Pods-FallingKokeraForiOS/Pods-FallingKokeraForiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		957AD81C2A4FB7C800DF61B9 /* Stage6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage6ViewController.swift; sourceTree = "<group>"; };
 		95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage5ViewController.swift; sourceTree = "<group>"; };
+		F12229F183D0B0515BD8791A /* Pods_FallingKokeraForiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FallingKokeraForiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,18 +63,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93EDA3F5D6E962F09A7A80D1 /* Pods_FallingKokeraForiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C09420749C79862D7254014 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F12229F183D0B0515BD8791A /* Pods_FallingKokeraForiOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D0A4281567BA66750557E2F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C6A7D02BD41082A191C12E8 /* Pods-FallingKokeraForiOS.debug.xcconfig */,
+				2CF7FE02C5EDC6DF2B89CA9A /* Pods-FallingKokeraForiOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		39DA2BBB2A074B6400F3BE24 = {
 			isa = PBXGroup;
 			children = (
 				39BD1EEB2A2D859700E87B20 /* 1ViewController.swift */,
 				39DA2BC62A074B6400F3BE24 /* FallingKokeraForiOS */,
 				39DA2BC52A074B6400F3BE24 /* Products */,
+				1D0A4281567BA66750557E2F /* Pods */,
+				1C09420749C79862D7254014 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +141,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39DA2BD82A074B6800F3BE24 /* Build configuration list for PBXNativeTarget "FallingKokeraForiOS" */;
 			buildPhases = (
+				F2F40AC891C67F1E805566C6 /* [CP] Check Pods Manifest.lock */,
 				39DA2BC02A074B6400F3BE24 /* Sources */,
 				39DA2BC12A074B6400F3BE24 /* Frameworks */,
 				39DA2BC22A074B6400F3BE24 /* Resources */,
@@ -174,6 +200,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F2F40AC891C67F1E805566C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FallingKokeraForiOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		39DA2BC02A074B6400F3BE24 /* Sources */ = {
@@ -338,6 +389,7 @@
 		};
 		39DA2BD92A074B6800F3BE24 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C6A7D02BD41082A191C12E8 /* Pods-FallingKokeraForiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -366,6 +418,7 @@
 		};
 		39DA2BDA2A074B6800F3BE24 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CF7FE02C5EDC6DF2B89CA9A /* Pods-FallingKokeraForiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
