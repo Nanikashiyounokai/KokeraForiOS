@@ -196,6 +196,9 @@
                                 <state key="normal" title="漆">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="9RG-du-I11" kind="show" id="g7a-M7-U9L"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHj-g1-sBw">
                                 <rect key="frame" x="148" y="492" width="94" height="92"/>
@@ -208,6 +211,9 @@
                                 <state key="normal" title="捌">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Fnl-tx-SlS" kind="show" id="pyN-i1-JEo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7Y-6M-4TI">
                                 <rect key="frame" x="263" y="492" width="94" height="92"/>
@@ -217,6 +223,9 @@
                                 <state key="normal" title="玖">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="xbX-26-tzH" kind="show" id="fcQ-q4-KYr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtC-cn-o8F">
                                 <rect key="frame" x="35" y="268" width="94" height="92"/>
@@ -326,6 +335,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KtU-Qt-IFx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2931" y="-694"/>
+        </scene>
+        <!--Stage7 View Controller-->
+        <scene sceneID="5Z0-x9-bji">
+            <objects>
+                <viewController id="9RG-du-I11" customClass="Stage7ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4aZ-5L-WSh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="SQ7-tB-T5y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="85h-3y-KIU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SMB-VZ-uJh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2931" y="53"/>
+        </scene>
+        <!--Stage8 View Controller-->
+        <scene sceneID="JYg-jp-tKQ">
+            <objects>
+                <viewController id="Fnl-tx-SlS" customClass="Stage8ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vcz-Xz-o2w">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="MRj-vF-iVJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1jZ-Bz-5nV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j3F-rA-Mpp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3873" y="53"/>
+        </scene>
+        <!--Stage9 View Controller-->
+        <scene sceneID="BVy-wt-J3C">
+            <objects>
+                <viewController id="xbX-26-tzH" customClass="Stage9ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GKY-ZZ-EdW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gQa-Eu-gTi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IcG-P8-Rhi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m6w-CV-5gu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4784" y="53"/>
         </scene>
         <!--Stage5 View Controller-->
         <scene sceneID="TdB-vg-kT6">

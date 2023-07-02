@@ -36,7 +36,7 @@ class StageScene4: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         
-        playerBar = SKSpriteNode(color: .black, size: CGSize(width: 100, height: 10))
+        playerBar = SKSpriteNode(color: .black, size: CGSize(width: 50, height: 10))
         playerBar.position = CGPoint(x: size.width / 2, y: 100)
         addChild(playerBar)
         
@@ -120,6 +120,9 @@ class StageScene4: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.collisionBitMask = 0
         sprite.physicsBody?.contactTestBitMask = PhysicsCategory.player.rawValue
         sprite.physicsBody?.isDynamic = true
+        
+        sprite.physicsBody?.categoryBitMask = isKaki ? PhysicsCategory.kaki.rawValue : PhysicsCategory.kokera.rawValue
+        sprite.physicsBody?.contactTestBitMask = PhysicsCategory.ground.rawValue
     }
 
 
@@ -150,6 +153,13 @@ class StageScene4: SKScene, SKPhysicsContactDelegate {
         } else if contactMask == (PhysicsCategory.kaki.rawValue | PhysicsCategory.ground.rawValue) {
             // kakiと地面が接触した場合、gameover_kakiというStoryboard IDの画面に遷移
             failControlView(withIdentifier: "gameover_kaki")
+        }else if contactMask == (PhysicsCategory.kokera.rawValue | PhysicsCategory.ground.rawValue) {
+            // kokeraと地面が接触した場合、kokeraを画面から消す
+            if contact.bodyA.node?.name == "kokera" {
+                contact.bodyA.node?.removeFromParent()
+            } else if contact.bodyB.node?.name == "kokera" {
+                contact.bodyB.node?.removeFromParent()
+            }
         }
     }
     
