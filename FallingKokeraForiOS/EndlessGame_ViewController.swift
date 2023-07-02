@@ -3,7 +3,7 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
-class Stage6ViewController: UIViewController {
+class EndlessGameController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,24 +11,26 @@ class Stage6ViewController: UIViewController {
         let skView = SKView(frame: view.bounds)
         view.addSubview(skView)
 
-        let scene = StageScene6(size: skView.bounds.size)
+        let scene = EndlessGameScene(size: skView.bounds.size)
         scene.scaleMode = .aspectFill
         skView.presentScene(scene)
     }
 }
 
-class StageScene6: SKScene, SKPhysicsContactDelegate {
+class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
     
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!
     var kakiScoreNode: SKSpriteNode!
     var score: Int = 0 {
         didSet {
-            scoreLabel.text = "\(score)/5"
+            scoreLabel.text = "\(score)"
             }
     }
     
     var kakiList: [SKSpriteNode] = []
+    
+    var kakiCount: Int = 0 // Added line
     
     override func didMove(to view: SKView) {
         backgroundColor = .white
@@ -50,7 +52,7 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         scoreLabel.frame = CGRect(x: size.width - 70, y: 65, width: 200, height: 70)
         scoreLabel.textColor = .black
         scoreLabel.font = UIFont.systemFont(ofSize: 36)
-        scoreLabel.text = "\(score)/5"
+        scoreLabel.text = "\(score)"
         view.addSubview(scoreLabel)
         
         kakiScoreNode = SKSpriteNode(imageNamed: "kakiscore.png")
@@ -92,48 +94,28 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
     func generateImages() {
         let isKaki = Bool.random()
 
-        let spriteName = isKaki ? "kaki_nomal" : "kokera_nomal"
+        // Check the count of kaki and use smaller version if more than or equals to 3
+        let spriteName = (isKaki ? "kaki_" : "kokera_") + (kakiCount >= 3 ? "small" : "nomal")
         let sprite = SKSpriteNode(imageNamed: spriteName)
 
+        let xRange = sprite.size.width / 2 + 25...size.width - sprite.size.width / 2 - 25
         let yRange = size.height - sprite.size.height / 2 - 100...size.height - sprite.size.height / 2
+
+        let startX = CGFloat.random(in: xRange)
+        let endX = CGFloat.random(in: xRange)
         let y = CGFloat.random(in: yRange)
 
-        // Set start position to the middle of the screen
-        sprite.position = CGPoint(x: size.width / 2, y: y)
+        sprite.position = CGPoint(x: startX, y: y)
         sprite.name = isKaki ? "kaki" : "kokera"
 
         addChild(sprite)
         kakiList.append(sprite)
 
         let destinationY = -sprite.size.height / 2
-        let moveVerticalAction = SKAction.moveTo(y: destinationY, duration: 6)
-
-        // Define sway range from the center of the screen
-        let swayRange: CGFloat = 150
-        let leftBoundary = size.width / 2 - swayRange
-        let rightBoundary = size.width / 2 + swayRange
-
-        // Randomly choose initial sway direction
-        let initialDirectionIsLeft = Bool.random()
-
-        // Define duration for each side sway
-        let durationRange: ClosedRange<CGFloat> = 0.3...1.0
-        let SameDuration = CGFloat.random(in: durationRange)
-
-        let moveToLeft = SKAction.moveTo(x: leftBoundary, duration: TimeInterval(SameDuration))
-        let moveToRight = SKAction.moveTo(x: rightBoundary, duration: TimeInterval(SameDuration))
-        let moveToCenter = SKAction.moveTo(x: sprite.position.x, duration: TimeInterval(SameDuration))
-
-        let swayActionPattern = initialDirectionIsLeft ?
-            SKAction.sequence([moveToLeft, moveToRight, moveToCenter]) :
-            SKAction.sequence([moveToRight, moveToLeft, moveToCenter])
-
-        let swayAction = SKAction.repeatForever(swayActionPattern)
-
-        let combinedAction = SKAction.group([moveVerticalAction, swayAction])
-        
+        let moveAction = SKAction.moveTo(y: destinationY, duration: 6)
         let removeAction = SKAction.removeFromParent()
-        let sequence: SKAction = SKAction.sequence([combinedAction, removeAction])
+        let sequence: SKAction = SKAction.sequence([moveAction, removeAction])
+
         sprite.run(sequence)
 
         sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
@@ -145,7 +127,6 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.categoryBitMask = isKaki ? PhysicsCategory.kaki.rawValue : PhysicsCategory.kokera.rawValue
         sprite.physicsBody?.contactTestBitMask = PhysicsCategory.ground.rawValue
     }
-
 
 
     func didBegin(_ contact: SKPhysicsContact) {
@@ -164,17 +145,14 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
                 }
             }
             score += 1
+            kakiCount += 1 // Increment kaki count
             
-            if score >= 5 {
-                // スコアが5になったら、gameclearというStoryboard IDの画面に遷移
-                clearControlView()
-            }
         } else if contactMask == (PhysicsCategory.kokera.rawValue | PhysicsCategory.player.rawValue) {
-            // kokeraとプレイヤーバーが接触した場合、gameover_kokeraというStoryboard IDの画面に遷移
-            failControlView(withIdentifier: "gameover_kokera")
+            // kokeraとプレイヤーバーが接触した場合、endlessover_kokeraというStoryboard IDの画面に遷移
+            failControlView(withIdentifier: "Endlessover_kokera")
         } else if contactMask == (PhysicsCategory.kaki.rawValue | PhysicsCategory.ground.rawValue) {
-            // kakiと地面が接触した場合、gameover_kakiというStoryboard IDの画面に遷移
-            failControlView(withIdentifier: "gameover_kaki")
+            // kakiと地面が接触した場合、endlessover_kakiというStoryboard IDの画面に遷移
+            failControlView(withIdentifier: "Endlessover_kaki")
         }else if contactMask == (PhysicsCategory.kokera.rawValue | PhysicsCategory.ground.rawValue) {
             // kokeraと地面が接触した場合、kokeraを画面から消す
             if contact.bodyA.node?.name == "kokera" {
@@ -213,3 +191,4 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         }
     }
 }
+

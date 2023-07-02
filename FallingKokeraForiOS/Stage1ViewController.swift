@@ -35,7 +35,7 @@ class StageScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
 
-        playerBar = SKSpriteNode(color: .black, size: CGSize(width: 100, height: 10))
+        playerBar = SKSpriteNode(color: .black, size: CGSize(width: 50, height: 10))
         playerBar.position = CGPoint(x: size.width / 2, y: 100)
         addChild(playerBar)
 

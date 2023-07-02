@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		390174202A290B4E003493E0 /* Stage1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3901741F2A290B4E003493E0 /* Stage1ViewController.swift */; };
 		3915B03B2A4309BB00CC754F /* Stage4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3915B03A2A4309BB00CC754F /* Stage4ViewController.swift */; };
-		393ED5172A0E2DC300D7CCA0 /* EndlessGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393ED5162A0E2DC300D7CCA0 /* EndlessGameViewController.swift */; };
 		393ED5192A0E387200D7CCA0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393ED5182A0E387200D7CCA0 /* GameScene.swift */; };
 		396D17812A3E962F0079F709 /* Stage2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396D17802A3E962F0079F709 /* Stage2ViewController.swift */; };
 		396D17832A3EA6BB0079F709 /* Stage3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396D17822A3EA6BB0079F709 /* Stage3ViewController.swift */; };
@@ -27,6 +26,12 @@
 		39DA2BD42A074B6800F3BE24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39DA2BD22A074B6800F3BE24 /* LaunchScreen.storyboard */; };
 		93EDA3F5D6E962F09A7A80D1 /* Pods_FallingKokeraForiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F12229F183D0B0515BD8791A /* Pods_FallingKokeraForiOS.framework */; };
 		957AD81D2A4FB7C800DF61B9 /* Stage6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AD81C2A4FB7C800DF61B9 /* Stage6ViewController.swift */; };
+		95816D6A2A51241F00C53502 /* Stage7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95816D692A51241F00C53502 /* Stage7ViewController.swift */; };
+		95816D6C2A51242D00C53502 /* Stage8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95816D6B2A51242D00C53502 /* Stage8ViewController.swift */; };
+		95816D6E2A51243B00C53502 /* Stage9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95816D6D2A51243B00C53502 /* Stage9ViewController.swift */; };
+		95816D702A5153EC00C53502 /* EndlessGame_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95816D6F2A5153EC00C53502 /* EndlessGame_ViewController.swift */; };
+		95816D722A51541800C53502 /* Endlessover_kaki_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95816D712A51541800C53502 /* Endlessover_kaki_ViewController.swift */; };
+		95816D742A51543C00C53502 /* Endlessover_kokera_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95816D732A51543C00C53502 /* Endlessover_kokera_ViewController.swift */; };
 		95BB071A2A4EC61700C64E00 /* Stage5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +39,6 @@
 		2CF7FE02C5EDC6DF2B89CA9A /* Pods-FallingKokeraForiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FallingKokeraForiOS.release.xcconfig"; path = "Target Support Files/Pods-FallingKokeraForiOS/Pods-FallingKokeraForiOS.release.xcconfig"; sourceTree = "<group>"; };
 		3901741F2A290B4E003493E0 /* Stage1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage1ViewController.swift; sourceTree = "<group>"; };
 		3915B03A2A4309BB00CC754F /* Stage4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage4ViewController.swift; sourceTree = "<group>"; };
-		393ED5162A0E2DC300D7CCA0 /* EndlessGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessGameViewController.swift; sourceTree = "<group>"; };
 		393ED5182A0E387200D7CCA0 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		396D17802A3E962F0079F709 /* Stage2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage2ViewController.swift; sourceTree = "<group>"; };
 		396D17822A3EA6BB0079F709 /* Stage3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage3ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,12 @@
 		39DA2BD52A074B6800F3BE24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C6A7D02BD41082A191C12E8 /* Pods-FallingKokeraForiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FallingKokeraForiOS.debug.xcconfig"; path = "Target Support Files/Pods-FallingKokeraForiOS/Pods-FallingKokeraForiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		957AD81C2A4FB7C800DF61B9 /* Stage6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage6ViewController.swift; sourceTree = "<group>"; };
+		95816D692A51241F00C53502 /* Stage7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage7ViewController.swift; sourceTree = "<group>"; };
+		95816D6B2A51242D00C53502 /* Stage8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage8ViewController.swift; sourceTree = "<group>"; };
+		95816D6D2A51243B00C53502 /* Stage9ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage9ViewController.swift; sourceTree = "<group>"; };
+		95816D6F2A5153EC00C53502 /* EndlessGame_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessGame_ViewController.swift; sourceTree = "<group>"; };
+		95816D712A51541800C53502 /* Endlessover_kaki_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endlessover_kaki_ViewController.swift; sourceTree = "<group>"; };
+		95816D732A51543C00C53502 /* Endlessover_kokera_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endlessover_kokera_ViewController.swift; sourceTree = "<group>"; };
 		95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage5ViewController.swift; sourceTree = "<group>"; };
 		F12229F183D0B0515BD8791A /* Pods_FallingKokeraForiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FallingKokeraForiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -110,12 +120,18 @@
 			children = (
 				39AE316C2A3D67DF0015A159 /* Gameover_Kokera_ViewController.swift */,
 				39CEDA7C2A3D5E080047A95F /* Gameover_Kaki_ViewController.swift */,
+				95816D6F2A5153EC00C53502 /* EndlessGame_ViewController.swift */,
+				95816D712A51541800C53502 /* Endlessover_kaki_ViewController.swift */,
+				95816D732A51543C00C53502 /* Endlessover_kokera_ViewController.swift */,
 				39CEDA7A2A3D5DEE0047A95F /* GameClearViewController.swift */,
 				3977A4212A28F9CE00FDE039 /* StageGameHomeViewController.swift */,
 				3901741F2A290B4E003493E0 /* Stage1ViewController.swift */,
 				396D17802A3E962F0079F709 /* Stage2ViewController.swift */,
 				396D17822A3EA6BB0079F709 /* Stage3ViewController.swift */,
 				957AD81C2A4FB7C800DF61B9 /* Stage6ViewController.swift */,
+				95816D692A51241F00C53502 /* Stage7ViewController.swift */,
+				95816D6B2A51242D00C53502 /* Stage8ViewController.swift */,
+				95816D6D2A51243B00C53502 /* Stage9ViewController.swift */,
 				3915B03A2A4309BB00CC754F /* Stage4ViewController.swift */,
 				95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */,
 				39D6F28D2A5158EB007C4A1D /* AboutThisAppViewController.swift */,
@@ -123,7 +139,6 @@
 				39DA2BC72A074B6400F3BE24 /* AppDelegate.swift */,
 				39DA2BC92A074B6400F3BE24 /* SceneDelegate.swift */,
 				39DA2BCB2A074B6400F3BE24 /* ViewController.swift */,
-				393ED5162A0E2DC300D7CCA0 /* EndlessGameViewController.swift */,
 				39DA2BCD2A074B6400F3BE24 /* Main.storyboard */,
 				39DA2BD02A074B6800F3BE24 /* Assets.xcassets */,
 				39DA2BD22A074B6800F3BE24 /* LaunchScreen.storyboard */,
@@ -232,19 +247,24 @@
 			files = (
 				39D6F28E2A5158EC007C4A1D /* AboutThisAppViewController.swift in Sources */,
 				393ED5192A0E387200D7CCA0 /* GameScene.swift in Sources */,
+				95816D722A51541800C53502 /* Endlessover_kaki_ViewController.swift in Sources */,
 				396D17812A3E962F0079F709 /* Stage2ViewController.swift in Sources */,
 				39CEDA7B2A3D5DEE0047A95F /* GameClearViewController.swift in Sources */,
+				95816D742A51543C00C53502 /* Endlessover_kokera_ViewController.swift in Sources */,
 				390174202A290B4E003493E0 /* Stage1ViewController.swift in Sources */,
 				396D17832A3EA6BB0079F709 /* Stage3ViewController.swift in Sources */,
 				957AD81D2A4FB7C800DF61B9 /* Stage6ViewController.swift in Sources */,
 				39DA2BCC2A074B6400F3BE24 /* ViewController.swift in Sources */,
 				3977A41E2A28B42100FDE039 /* CustomButton.swift in Sources */,
-				393ED5172A0E2DC300D7CCA0 /* EndlessGameViewController.swift in Sources */,
+				95816D6C2A51242D00C53502 /* Stage8ViewController.swift in Sources */,
 				39AE316D2A3D67DF0015A159 /* Gameover_Kokera_ViewController.swift in Sources */,
 				39DA2BC82A074B6400F3BE24 /* AppDelegate.swift in Sources */,
+				95816D702A5153EC00C53502 /* EndlessGame_ViewController.swift in Sources */,
 				3977A4222A28F9CE00FDE039 /* StageGameHomeViewController.swift in Sources */,
+				95816D6A2A51241F00C53502 /* Stage7ViewController.swift in Sources */,
 				39DA2BCA2A074B6400F3BE24 /* SceneDelegate.swift in Sources */,
 				95BB071A2A4EC61700C64E00 /* Stage5ViewController.swift in Sources */,
+				95816D6E2A51243B00C53502 /* Stage9ViewController.swift in Sources */,
 				39CEDA7D2A3D5E080047A95F /* Gameover_Kaki_ViewController.swift in Sources */,
 				3915B03B2A4309BB00CC754F /* Stage4ViewController.swift in Sources */,
 			);
