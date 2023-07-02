@@ -22,7 +22,7 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!
     var kakiScoreNode: SKSpriteNode!
-    var score: Int = 0 {
+    var score: Int = 19 {
         didSet {
             scoreLabel.text = "\(score)"
             }
@@ -30,13 +30,22 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
     
     var kakiList: [SKSpriteNode] = []
     
-    var kakiCount: Int = 0 // Added line
+    var kakiCount: Int = 19 // Added line
+    
+    var kabukiUpperNode: SKSpriteNode!
     
     override func didMove(to view: SKView) {
         backgroundColor = .white
         
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        
+        kabukiUpperNode = SKSpriteNode(imageNamed: "kabuki_upper")
+        kabukiUpperNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
+        kabukiUpperNode.zPosition = 1  // <-- 追加
+        
+        
+        
         
         playerBar = SKSpriteNode(color: .black, size: CGSize(width: 50, height: 10))
         playerBar.position = CGPoint(x: size.width / 2, y: 100)
@@ -91,6 +100,24 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
         playerBar.position.x = newX
     }
     
+    func startKabukiCycle() {
+        let appearDuration: TimeInterval = Double.random(in: 5...10)
+        let disappearDuration: TimeInterval = Double.random(in: 3...5)
+        
+        let appearAction = SKAction.run { [weak self] in
+            self?.kabukiUpperNode.isHidden = false
+        }
+        let waitAppearAction = SKAction.wait(forDuration: appearDuration)
+        let disappearAction = SKAction.run { [weak self] in
+            self?.kabukiUpperNode.isHidden = true
+        }
+        let waitDisappearAction = SKAction.wait(forDuration: disappearDuration)
+        let sequenceAction = SKAction.sequence([appearAction, waitAppearAction, disappearAction, waitDisappearAction])
+        let repeatAction = SKAction.repeatForever(sequenceAction)
+        run(repeatAction)
+    }
+    
+    
     func generateImages() {
         let isKaki = Bool.random()
 
@@ -112,21 +139,55 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
         kakiList.append(sprite)
 
         let destinationY = -sprite.size.height / 2
-        let moveAction = SKAction.moveTo(y: destinationY, duration: 6)
-        let removeAction = SKAction.removeFromParent()
-        let sequence: SKAction = SKAction.sequence([moveAction, removeAction])
-
-        sprite.run(sequence)
-
-        sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
-        sprite.physicsBody?.categoryBitMask = isKaki ? PhysicsCategory.kaki.rawValue : PhysicsCategory.kokera.rawValue
-        sprite.physicsBody?.collisionBitMask = 0
-        sprite.physicsBody?.contactTestBitMask = PhysicsCategory.player.rawValue
-        sprite.physicsBody?.isDynamic = true
         
-        sprite.physicsBody?.categoryBitMask = isKaki ? PhysicsCategory.kaki.rawValue : PhysicsCategory.kokera.rawValue
-        sprite.physicsBody?.contactTestBitMask = PhysicsCategory.ground.rawValue
-    }
+        // Set different vertical move duration based on the kaki count
+            let moveVerticalDuration = kakiCount < 6 ? 6.0 : (kakiCount < 10 ? 4.0 : 3.0)
+            let moveVerticalAction = SKAction.moveTo(y: destinationY, duration: moveVerticalDuration)
+
+            let removeAction = SKAction.removeFromParent()
+            var sequence: SKAction
+
+            // Create sway action if kakiCount is more than or equals to 10
+            if kakiCount >= 10 {
+                // Define sway range from the center of the screen
+                let swayRange: CGFloat = 150
+                let leftBoundary = size.width / 2 - swayRange
+                let rightBoundary = size.width / 2 + swayRange
+
+                // Randomly choose initial sway direction
+                let initialDirectionIsLeft = Bool.random()
+
+                // Define duration for each side sway
+                let durationRange: ClosedRange<CGFloat> = 1.0...1.0
+                let SameDuration = CGFloat.random(in: durationRange)
+
+                let moveToLeft = SKAction.moveTo(x: leftBoundary, duration: TimeInterval(SameDuration))
+                let moveToRight = SKAction.moveTo(x: rightBoundary, duration: TimeInterval(SameDuration))
+                let moveToCenter = SKAction.moveTo(x: sprite.position.x, duration: TimeInterval(SameDuration))
+
+                let swayActionPattern = initialDirectionIsLeft ?
+                    SKAction.sequence([moveToLeft, moveToRight, moveToCenter]) :
+                    SKAction.sequence([moveToRight, moveToLeft, moveToCenter])
+
+                let swayAction = SKAction.repeatForever(swayActionPattern)
+
+                let combinedAction = SKAction.group([moveVerticalAction, swayAction])
+                sequence = SKAction.sequence([combinedAction, removeAction])
+            } else {
+                sequence = SKAction.sequence([moveVerticalAction, removeAction])
+            }
+
+            sprite.run(sequence)
+
+            sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
+            sprite.physicsBody?.categoryBitMask = isKaki ? PhysicsCategory.kaki.rawValue : PhysicsCategory.kokera.rawValue
+            sprite.physicsBody?.collisionBitMask = 0
+            sprite.physicsBody?.contactTestBitMask = PhysicsCategory.player.rawValue
+            sprite.physicsBody?.isDynamic = true
+
+            sprite.physicsBody?.categoryBitMask = isKaki ? PhysicsCategory.kaki.rawValue : PhysicsCategory.kokera.rawValue
+            sprite.physicsBody?.contactTestBitMask = PhysicsCategory.ground.rawValue
+        }
 
 
     func didBegin(_ contact: SKPhysicsContact) {
@@ -146,6 +207,14 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
             }
             score += 1
             kakiCount += 1 // Increment kaki count
+            
+            // kabuki_upperの設定
+            if kakiCount >= 15 {
+                addChild(kabukiUpperNode)
+                kabukiUpperNode.isHidden = false
+                startKabukiCycle()
+                
+            }
             
         } else if contactMask == (PhysicsCategory.kokera.rawValue | PhysicsCategory.player.rawValue) {
             // kokeraとプレイヤーバーが接触した場合、endlessover_kokeraというStoryboard IDの画面に遷移

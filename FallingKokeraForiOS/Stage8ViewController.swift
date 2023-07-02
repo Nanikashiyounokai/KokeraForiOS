@@ -3,10 +3,6 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
-extension CGFloat {
-    var degreesToRadians: CGFloat { return self * .pi / 180 }
-}
-
 class Stage8ViewController: UIViewController {
 
     override func viewDidLoad() {
