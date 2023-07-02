@@ -27,6 +27,9 @@
 		39DA2BD42A074B6800F3BE24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39DA2BD22A074B6800F3BE24 /* LaunchScreen.storyboard */; };
 		93EDA3F5D6E962F09A7A80D1 /* Pods_FallingKokeraForiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F12229F183D0B0515BD8791A /* Pods_FallingKokeraForiOS.framework */; };
 		957AD81D2A4FB7C800DF61B9 /* Stage6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AD81C2A4FB7C800DF61B9 /* Stage6ViewController.swift */; };
+		95816D6A2A51241F00C53502 /* Stage7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95816D692A51241F00C53502 /* Stage7ViewController.swift */; };
+		95816D6C2A51242D00C53502 /* Stage8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95816D6B2A51242D00C53502 /* Stage8ViewController.swift */; };
+		95816D6E2A51243B00C53502 /* Stage9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95816D6D2A51243B00C53502 /* Stage9ViewController.swift */; };
 		95BB071A2A4EC61700C64E00 /* Stage5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		39DA2BD52A074B6800F3BE24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C6A7D02BD41082A191C12E8 /* Pods-FallingKokeraForiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FallingKokeraForiOS.debug.xcconfig"; path = "Target Support Files/Pods-FallingKokeraForiOS/Pods-FallingKokeraForiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		957AD81C2A4FB7C800DF61B9 /* Stage6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage6ViewController.swift; sourceTree = "<group>"; };
+		95816D692A51241F00C53502 /* Stage7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage7ViewController.swift; sourceTree = "<group>"; };
+		95816D6B2A51242D00C53502 /* Stage8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage8ViewController.swift; sourceTree = "<group>"; };
+		95816D6D2A51243B00C53502 /* Stage9ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage9ViewController.swift; sourceTree = "<group>"; };
 		95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage5ViewController.swift; sourceTree = "<group>"; };
 		F12229F183D0B0515BD8791A /* Pods_FallingKokeraForiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FallingKokeraForiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,6 +124,9 @@
 				396D17802A3E962F0079F709 /* Stage2ViewController.swift */,
 				396D17822A3EA6BB0079F709 /* Stage3ViewController.swift */,
 				957AD81C2A4FB7C800DF61B9 /* Stage6ViewController.swift */,
+				95816D692A51241F00C53502 /* Stage7ViewController.swift */,
+				95816D6B2A51242D00C53502 /* Stage8ViewController.swift */,
+				95816D6D2A51243B00C53502 /* Stage9ViewController.swift */,
 				3915B03A2A4309BB00CC754F /* Stage4ViewController.swift */,
 				95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */,
 				3977A41D2A28B42000FDE039 /* CustomButton.swift */,
@@ -240,12 +249,15 @@
 				957AD81D2A4FB7C800DF61B9 /* Stage6ViewController.swift in Sources */,
 				39DA2BCC2A074B6400F3BE24 /* ViewController.swift in Sources */,
 				3977A41E2A28B42100FDE039 /* CustomButton.swift in Sources */,
+				95816D6C2A51242D00C53502 /* Stage8ViewController.swift in Sources */,
 				393ED5172A0E2DC300D7CCA0 /* EndlessGameViewController.swift in Sources */,
 				39AE316D2A3D67DF0015A159 /* Gameover_Kokera_ViewController.swift in Sources */,
 				39DA2BC82A074B6400F3BE24 /* AppDelegate.swift in Sources */,
 				3977A4222A28F9CE00FDE039 /* StageGameHomeViewController.swift in Sources */,
+				95816D6A2A51241F00C53502 /* Stage7ViewController.swift in Sources */,
 				39DA2BCA2A074B6400F3BE24 /* SceneDelegate.swift in Sources */,
 				95BB071A2A4EC61700C64E00 /* Stage5ViewController.swift in Sources */,
+				95816D6E2A51243B00C53502 /* Stage9ViewController.swift in Sources */,
 				39CEDA7D2A3D5E080047A95F /* Gameover_Kaki_ViewController.swift in Sources */,
 				3915B03B2A4309BB00CC754F /* Stage4ViewController.swift in Sources */,
 			);

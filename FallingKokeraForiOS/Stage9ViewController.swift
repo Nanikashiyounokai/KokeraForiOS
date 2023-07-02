@@ -3,7 +3,7 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
-class Stage6ViewController: UIViewController {
+class Stage9ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,13 +11,13 @@ class Stage6ViewController: UIViewController {
         let skView = SKView(frame: view.bounds)
         view.addSubview(skView)
 
-        let scene = StageScene6(size: skView.bounds.size)
+        let scene = StageScene9(size: skView.bounds.size)
         scene.scaleMode = .aspectFill
         skView.presentScene(scene)
     }
 }
 
-class StageScene6: SKScene, SKPhysicsContactDelegate {
+class StageScene9: SKScene, SKPhysicsContactDelegate {
     
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!
@@ -30,11 +30,22 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
     
     var kakiList: [SKSpriteNode] = []
     
+    var kabukiUpperNode: SKSpriteNode!
+    
     override func didMove(to view: SKView) {
         backgroundColor = .white
         
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        
+        // kabuki_upperの設定
+        kabukiUpperNode = SKSpriteNode(imageNamed: "kabuki_upper")
+        kabukiUpperNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
+        kabukiUpperNode.isHidden = true
+        kabukiUpperNode.zPosition = 1  // <-- 追加
+        addChild(kabukiUpperNode)
+                
+            startKabukiCycle()
         
         playerBar = SKSpriteNode(color: .black, size: CGSize(width: 50, height: 10))
         playerBar.position = CGPoint(x: size.width / 2, y: 100)
@@ -89,13 +100,35 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         playerBar.position.x = newX
     }
     
+    func startKabukiCycle() {
+        let appearDuration: TimeInterval = Double.random(in: 5...10)
+        let disappearDuration: TimeInterval = Double.random(in: 3...5)
+        
+        let appearAction = SKAction.run { [weak self] in
+            self?.kabukiUpperNode.isHidden = false
+        }
+        let waitAppearAction = SKAction.wait(forDuration: appearDuration)
+        let disappearAction = SKAction.run { [weak self] in
+            self?.kabukiUpperNode.isHidden = true
+        }
+        let waitDisappearAction = SKAction.wait(forDuration: disappearDuration)
+        let sequenceAction = SKAction.sequence([appearAction, waitAppearAction, disappearAction, waitDisappearAction])
+        let repeatAction = SKAction.repeatForever(sequenceAction)
+        run(repeatAction)
+    }
+    
     func generateImages() {
         let isKaki = Bool.random()
 
         let spriteName = isKaki ? "kaki_nomal" : "kokera_nomal"
         let sprite = SKSpriteNode(imageNamed: spriteName)
+        
+        let xRange = sprite.size.width / 2 + 25...size.width - sprite.size.width / 2 - 25
 
         let yRange = size.height - sprite.size.height / 2 - 100...size.height - sprite.size.height / 2
+        
+        let startX = CGFloat.random(in: xRange)
+        let endX = CGFloat.random(in: xRange)
         let y = CGFloat.random(in: yRange)
 
         // Set start position to the middle of the screen
@@ -107,6 +140,14 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
 
         let destinationY = -sprite.size.height / 2
         let moveVerticalAction = SKAction.moveTo(y: destinationY, duration: 6)
+        
+        // Randomly select the rotation direction
+        let rotateDirection = Bool.random() ? CGFloat.pi * 2 : -CGFloat.pi * 2
+        
+        // Define rotation action
+            let rotateAction = SKAction.rotate(byAngle: CGFloat.pi * 2, duration: 1)
+            let repeatForeverRotateAction = SKAction.repeatForever(rotateAction)
+            
 
         // Define sway range from the center of the screen
         let swayRange: CGFloat = 150
@@ -130,7 +171,7 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
 
         let swayAction = SKAction.repeatForever(swayActionPattern)
 
-        let combinedAction = SKAction.group([moveVerticalAction, swayAction])
+        let combinedAction = SKAction.group([moveVerticalAction, swayAction, repeatForeverRotateAction])
         
         let removeAction = SKAction.removeFromParent()
         let sequence: SKAction = SKAction.sequence([combinedAction, removeAction])
