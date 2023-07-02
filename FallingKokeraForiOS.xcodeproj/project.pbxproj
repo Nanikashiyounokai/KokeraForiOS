@@ -16,9 +16,9 @@
 		3977A41E2A28B42100FDE039 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3977A41D2A28B42000FDE039 /* CustomButton.swift */; };
 		3977A4222A28F9CE00FDE039 /* StageGameHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3977A4212A28F9CE00FDE039 /* StageGameHomeViewController.swift */; };
 		39AE316D2A3D67DF0015A159 /* Gameover_Kokera_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE316C2A3D67DF0015A159 /* Gameover_Kokera_ViewController.swift */; };
-		39BD1EEC2A2D859700E87B20 /* 1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BD1EEB2A2D859700E87B20 /* 1ViewController.swift */; };
 		39CEDA7B2A3D5DEE0047A95F /* GameClearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CEDA7A2A3D5DEE0047A95F /* GameClearViewController.swift */; };
 		39CEDA7D2A3D5E080047A95F /* Gameover_Kaki_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CEDA7C2A3D5E080047A95F /* Gameover_Kaki_ViewController.swift */; };
+		39D6F28E2A5158EC007C4A1D /* AboutThisAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D6F28D2A5158EB007C4A1D /* AboutThisAppViewController.swift */; };
 		39DA2BC82A074B6400F3BE24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA2BC72A074B6400F3BE24 /* AppDelegate.swift */; };
 		39DA2BCA2A074B6400F3BE24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA2BC92A074B6400F3BE24 /* SceneDelegate.swift */; };
 		39DA2BCC2A074B6400F3BE24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA2BCB2A074B6400F3BE24 /* ViewController.swift */; };
@@ -41,9 +41,9 @@
 		3977A41D2A28B42000FDE039 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		3977A4212A28F9CE00FDE039 /* StageGameHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageGameHomeViewController.swift; sourceTree = "<group>"; };
 		39AE316C2A3D67DF0015A159 /* Gameover_Kokera_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gameover_Kokera_ViewController.swift; sourceTree = "<group>"; };
-		39BD1EEB2A2D859700E87B20 /* 1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1ViewController.swift; sourceTree = "<group>"; };
 		39CEDA7A2A3D5DEE0047A95F /* GameClearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameClearViewController.swift; sourceTree = "<group>"; };
 		39CEDA7C2A3D5E080047A95F /* Gameover_Kaki_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gameover_Kaki_ViewController.swift; sourceTree = "<group>"; };
+		39D6F28D2A5158EB007C4A1D /* AboutThisAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutThisAppViewController.swift; sourceTree = "<group>"; };
 		39DA2BC42A074B6400F3BE24 /* FallingKokeraForiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingKokeraForiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39DA2BC72A074B6400F3BE24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39DA2BC92A074B6400F3BE24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,14 +84,12 @@
 				7C6A7D02BD41082A191C12E8 /* Pods-FallingKokeraForiOS.debug.xcconfig */,
 				2CF7FE02C5EDC6DF2B89CA9A /* Pods-FallingKokeraForiOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		39DA2BBB2A074B6400F3BE24 = {
 			isa = PBXGroup;
 			children = (
-				39BD1EEB2A2D859700E87B20 /* 1ViewController.swift */,
 				39DA2BC62A074B6400F3BE24 /* FallingKokeraForiOS */,
 				39DA2BC52A074B6400F3BE24 /* Products */,
 				1D0A4281567BA66750557E2F /* Pods */,
@@ -120,6 +118,7 @@
 				957AD81C2A4FB7C800DF61B9 /* Stage6ViewController.swift */,
 				3915B03A2A4309BB00CC754F /* Stage4ViewController.swift */,
 				95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */,
+				39D6F28D2A5158EB007C4A1D /* AboutThisAppViewController.swift */,
 				3977A41D2A28B42000FDE039 /* CustomButton.swift */,
 				39DA2BC72A074B6400F3BE24 /* AppDelegate.swift */,
 				39DA2BC92A074B6400F3BE24 /* SceneDelegate.swift */,
@@ -231,8 +230,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39D6F28E2A5158EC007C4A1D /* AboutThisAppViewController.swift in Sources */,
 				393ED5192A0E387200D7CCA0 /* GameScene.swift in Sources */,
-				39BD1EEC2A2D859700E87B20 /* 1ViewController.swift in Sources */,
 				396D17812A3E962F0079F709 /* Stage2ViewController.swift in Sources */,
 				39CEDA7B2A3D5DEE0047A95F /* GameClearViewController.swift in Sources */,
 				390174202A290B4E003493E0 /* Stage1ViewController.swift in Sources */,
