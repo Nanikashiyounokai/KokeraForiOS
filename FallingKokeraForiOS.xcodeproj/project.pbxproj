@@ -16,7 +16,6 @@
 		3977A41E2A28B42100FDE039 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3977A41D2A28B42000FDE039 /* CustomButton.swift */; };
 		3977A4222A28F9CE00FDE039 /* StageGameHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3977A4212A28F9CE00FDE039 /* StageGameHomeViewController.swift */; };
 		39AE316D2A3D67DF0015A159 /* Gameover_Kokera_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AE316C2A3D67DF0015A159 /* Gameover_Kokera_ViewController.swift */; };
-		39BD1EEC2A2D859700E87B20 /* 1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39BD1EEB2A2D859700E87B20 /* 1ViewController.swift */; };
 		39CEDA7B2A3D5DEE0047A95F /* GameClearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CEDA7A2A3D5DEE0047A95F /* GameClearViewController.swift */; };
 		39CEDA7D2A3D5E080047A95F /* Gameover_Kaki_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CEDA7C2A3D5E080047A95F /* Gameover_Kaki_ViewController.swift */; };
 		39DA2BC82A074B6400F3BE24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA2BC72A074B6400F3BE24 /* AppDelegate.swift */; };
@@ -28,6 +27,9 @@
 		93EDA3F5D6E962F09A7A80D1 /* Pods_FallingKokeraForiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F12229F183D0B0515BD8791A /* Pods_FallingKokeraForiOS.framework */; };
 		957AD81D2A4FB7C800DF61B9 /* Stage6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957AD81C2A4FB7C800DF61B9 /* Stage6ViewController.swift */; };
 		95BB071A2A4EC61700C64E00 /* Stage5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */; };
+		CEC7CEBB2A515CBD002462D1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7CEBA2A515CBD002462D1 /* RegisterViewController.swift */; };
+		CEC7CEBD2A515E49002462D1 /* Register2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7CEBC2A515E49002462D1 /* Register2ViewController.swift */; };
+		CEC7CEBF2A516F95002462D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEC7CEBE2A516F95002462D1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +43,6 @@
 		3977A41D2A28B42000FDE039 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		3977A4212A28F9CE00FDE039 /* StageGameHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageGameHomeViewController.swift; sourceTree = "<group>"; };
 		39AE316C2A3D67DF0015A159 /* Gameover_Kokera_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gameover_Kokera_ViewController.swift; sourceTree = "<group>"; };
-		39BD1EEB2A2D859700E87B20 /* 1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 1ViewController.swift; sourceTree = "<group>"; };
 		39CEDA7A2A3D5DEE0047A95F /* GameClearViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameClearViewController.swift; sourceTree = "<group>"; };
 		39CEDA7C2A3D5E080047A95F /* Gameover_Kaki_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gameover_Kaki_ViewController.swift; sourceTree = "<group>"; };
 		39DA2BC42A074B6400F3BE24 /* FallingKokeraForiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingKokeraForiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +56,9 @@
 		7C6A7D02BD41082A191C12E8 /* Pods-FallingKokeraForiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FallingKokeraForiOS.debug.xcconfig"; path = "Target Support Files/Pods-FallingKokeraForiOS/Pods-FallingKokeraForiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		957AD81C2A4FB7C800DF61B9 /* Stage6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage6ViewController.swift; sourceTree = "<group>"; };
 		95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage5ViewController.swift; sourceTree = "<group>"; };
+		CEC7CEBA2A515CBD002462D1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CEC7CEBC2A515E49002462D1 /* Register2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register2ViewController.swift; sourceTree = "<group>"; };
+		CEC7CEBE2A516F95002462D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F12229F183D0B0515BD8791A /* Pods_FallingKokeraForiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FallingKokeraForiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,14 +88,12 @@
 				7C6A7D02BD41082A191C12E8 /* Pods-FallingKokeraForiOS.debug.xcconfig */,
 				2CF7FE02C5EDC6DF2B89CA9A /* Pods-FallingKokeraForiOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		39DA2BBB2A074B6400F3BE24 = {
 			isa = PBXGroup;
 			children = (
-				39BD1EEB2A2D859700E87B20 /* 1ViewController.swift */,
 				39DA2BC62A074B6400F3BE24 /* FallingKokeraForiOS */,
 				39DA2BC52A074B6400F3BE24 /* Products */,
 				1D0A4281567BA66750557E2F /* Pods */,
@@ -122,6 +124,8 @@
 				95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */,
 				3977A41D2A28B42000FDE039 /* CustomButton.swift */,
 				39DA2BC72A074B6400F3BE24 /* AppDelegate.swift */,
+				CEC7CEBA2A515CBD002462D1 /* RegisterViewController.swift */,
+				CEC7CEBC2A515E49002462D1 /* Register2ViewController.swift */,
 				39DA2BC92A074B6400F3BE24 /* SceneDelegate.swift */,
 				39DA2BCB2A074B6400F3BE24 /* ViewController.swift */,
 				393ED5162A0E2DC300D7CCA0 /* EndlessGameViewController.swift */,
@@ -129,6 +133,7 @@
 				39DA2BD02A074B6800F3BE24 /* Assets.xcassets */,
 				39DA2BD22A074B6800F3BE24 /* LaunchScreen.storyboard */,
 				39DA2BD52A074B6800F3BE24 /* Info.plist */,
+				CEC7CEBE2A516F95002462D1 /* GoogleService-Info.plist */,
 				393ED5182A0E387200D7CCA0 /* GameScene.swift */,
 			);
 			path = FallingKokeraForiOS;
@@ -145,6 +150,7 @@
 				39DA2BC02A074B6400F3BE24 /* Sources */,
 				39DA2BC12A074B6400F3BE24 /* Frameworks */,
 				39DA2BC22A074B6400F3BE24 /* Resources */,
+				AEF8C54D231A7A2180C06B66 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39DA2BD42A074B6800F3BE24 /* LaunchScreen.storyboard in Resources */,
+				CEC7CEBF2A516F95002462D1 /* GoogleService-Info.plist in Resources */,
 				39DA2BD12A074B6800F3BE24 /* Assets.xcassets in Resources */,
 				39DA2BCF2A074B6400F3BE24 /* Main.storyboard in Resources */,
 			);
@@ -202,6 +209,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		AEF8C54D231A7A2180C06B66 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FallingKokeraForiOS/Pods-FallingKokeraForiOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FallingKokeraForiOS/Pods-FallingKokeraForiOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FallingKokeraForiOS/Pods-FallingKokeraForiOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F2F40AC891C67F1E805566C6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,7 +256,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				393ED5192A0E387200D7CCA0 /* GameScene.swift in Sources */,
-				39BD1EEC2A2D859700E87B20 /* 1ViewController.swift in Sources */,
 				396D17812A3E962F0079F709 /* Stage2ViewController.swift in Sources */,
 				39CEDA7B2A3D5DEE0047A95F /* GameClearViewController.swift in Sources */,
 				390174202A290B4E003493E0 /* Stage1ViewController.swift in Sources */,
@@ -245,8 +268,10 @@
 				39DA2BC82A074B6400F3BE24 /* AppDelegate.swift in Sources */,
 				3977A4222A28F9CE00FDE039 /* StageGameHomeViewController.swift in Sources */,
 				39DA2BCA2A074B6400F3BE24 /* SceneDelegate.swift in Sources */,
+				CEC7CEBB2A515CBD002462D1 /* RegisterViewController.swift in Sources */,
 				95BB071A2A4EC61700C64E00 /* Stage5ViewController.swift in Sources */,
 				39CEDA7D2A3D5E080047A95F /* Gameover_Kaki_ViewController.swift in Sources */,
+				CEC7CEBD2A515E49002462D1 /* Register2ViewController.swift in Sources */,
 				3915B03B2A4309BB00CC754F /* Stage4ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,9 +420,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3GYNZU4HS2;
+				DEVELOPMENT_TEAM = U9JDU338GY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FallingKokeraForiOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "柿落とし";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -424,9 +450,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3GYNZU4HS2;
+				DEVELOPMENT_TEAM = U9JDU338GY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FallingKokeraForiOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "柿落とし";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
