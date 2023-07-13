@@ -22,7 +22,7 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!
     var kakiScoreNode: SKSpriteNode!
-    var score: Int = 19 {
+    var score: Int = 0 {
         didSet {
             scoreLabel.text = "\(score)"
             }
@@ -30,7 +30,7 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
     
     var kakiList: [SKSpriteNode] = []
     
-    var kakiCount: Int = 19 // Added line
+    var kakiCount: Int = 0 // Added line
     
     var kabukiUpperNode: SKSpriteNode!
     
@@ -120,79 +120,109 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
     
     func generateImages() {
         let isKaki = Bool.random()
-
+        
         // Check the count of kaki and use smaller version if more than or equals to 3
-        let spriteName = (isKaki ? "kaki_" : "kokera_") + (kakiCount >= 3 ? "small" : "nomal")
+        let spriteName = (isKaki ? "kaki_" : "kokera_") + (kakiCount >= 2 ? "small" : "nomal")
         let sprite = SKSpriteNode(imageNamed: spriteName)
-
+        
         let xRange = sprite.size.width / 2 + 25...size.width - sprite.size.width / 2 - 25
         let yRange = size.height - sprite.size.height / 2 - 100...size.height - sprite.size.height / 2
-
+        
         let startX = CGFloat.random(in: xRange)
         let endX = CGFloat.random(in: xRange)
         let y = CGFloat.random(in: yRange)
-
+        
         sprite.position = CGPoint(x: startX, y: y)
         sprite.name = isKaki ? "kaki" : "kokera"
-
+        
         addChild(sprite)
         kakiList.append(sprite)
-
+        
         let destinationY = -sprite.size.height / 2
         
         // Set different vertical move duration based on the kaki count
-            let moveVerticalDuration = kakiCount < 6 ? 6.0 : (kakiCount < 10 ? 4.0 : 3.0)
-            let moveVerticalAction = SKAction.moveTo(y: destinationY, duration: moveVerticalDuration)
-
-            let removeAction = SKAction.removeFromParent()
-            var sequence: SKAction
-
-            // Create sway action if kakiCount is more than or equals to 10
-            if kakiCount >= 10 {
-                // Define sway range from the center of the screen
-                let swayRange: CGFloat = 150
-                let leftBoundary = size.width / 2 - swayRange
-                let rightBoundary = size.width / 2 + swayRange
-
-                // Randomly choose initial sway direction
-                let initialDirectionIsLeft = Bool.random()
-
-                // Define duration for each side sway
-                let durationRange: ClosedRange<CGFloat> = 1.0...1.0
-                let SameDuration = CGFloat.random(in: durationRange)
-
-                let moveToLeft = SKAction.moveTo(x: leftBoundary, duration: TimeInterval(SameDuration))
-                let moveToRight = SKAction.moveTo(x: rightBoundary, duration: TimeInterval(SameDuration))
-                let moveToCenter = SKAction.moveTo(x: sprite.position.x, duration: TimeInterval(SameDuration))
-
-                let swayActionPattern = initialDirectionIsLeft ?
-                    SKAction.sequence([moveToLeft, moveToRight, moveToCenter]) :
-                    SKAction.sequence([moveToRight, moveToLeft, moveToCenter])
-
-                let swayAction = SKAction.repeatForever(swayActionPattern)
-
-                let combinedAction = SKAction.group([moveVerticalAction, swayAction])
-                sequence = SKAction.sequence([combinedAction, removeAction])
-            } else {
-                sequence = SKAction.sequence([moveVerticalAction, removeAction])
-            }
-
-            sprite.run(sequence)
-
-            sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
-            sprite.physicsBody?.categoryBitMask = isKaki ? PhysicsCategory.kaki.rawValue : PhysicsCategory.kokera.rawValue
-            sprite.physicsBody?.collisionBitMask = 0
-            sprite.physicsBody?.contactTestBitMask = PhysicsCategory.player.rawValue
-            sprite.physicsBody?.isDynamic = true
-
-            sprite.physicsBody?.categoryBitMask = isKaki ? PhysicsCategory.kaki.rawValue : PhysicsCategory.kokera.rawValue
-            sprite.physicsBody?.contactTestBitMask = PhysicsCategory.ground.rawValue
+        var moveVerticalDuration: Double
+        if kakiCount < 6 {
+            moveVerticalDuration = 6.0
+        } else if kakiCount < 10 {
+            moveVerticalDuration = 4.0
+        } else if kakiCount < 30 {
+            moveVerticalDuration = 8.0
+        } else if kakiCount < 40 {
+            moveVerticalDuration = 6.0
+        } else if kakiCount < 45 {
+            moveVerticalDuration = 5.0
+        } else if kakiCount < 50 {
+            moveVerticalDuration = 4.5
+        } else {
+            moveVerticalDuration = 4.0
         }
+        let moveVerticalAction = SKAction.moveTo(y: destinationY, duration: moveVerticalDuration)
+        
+        let moveAction = SKAction.moveTo(y: destinationY, duration: 6)
+        let removeAction = SKAction.removeFromParent()
+        var sequence: SKAction
+        
+        // Create sway action if kakiCount is more than or equals to 10
+        if kakiCount >= 10 {
+            let swayAction = createSwayAction(sprite: sprite)
+            let combinedAction = SKAction.group([moveVerticalAction, swayAction])
+            sequence = SKAction.sequence([combinedAction, removeAction])
+        } else {
+            sequence = SKAction.sequence([moveVerticalAction, removeAction])
+        }
+        
+        // If 20 or more kakis are obtained, rotate the sprite and add sway action
+        if kakiCount >= 20 {
+            let rotateAction = SKAction.rotate(byAngle: CGFloat.random(in: -CGFloat.pi...CGFloat.pi) * 2, duration: 0.5)
+            let repeatForeverAction = SKAction.repeatForever(rotateAction)
+            let swayAction = createSwayAction(sprite: sprite)
+            let groupAction = SKAction.group([moveAction, repeatForeverAction, swayAction])
+            sequence = SKAction.sequence([groupAction, removeAction])
+        }
+        
+        sprite.run(sequence)
+        
+        sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
+        sprite.physicsBody?.categoryBitMask = isKaki ? PhysicsCategory.kaki.rawValue : PhysicsCategory.kokera.rawValue
+        sprite.physicsBody?.collisionBitMask = 0
+        sprite.physicsBody?.contactTestBitMask = PhysicsCategory.player.rawValue
+        sprite.physicsBody?.isDynamic = true
+        
+        sprite.physicsBody?.categoryBitMask = isKaki ? PhysicsCategory.kaki.rawValue : PhysicsCategory.kokera.rawValue
+        sprite.physicsBody?.contactTestBitMask = PhysicsCategory.ground.rawValue
+    }
+
+    func createSwayAction(sprite: SKSpriteNode) -> SKAction {
+        // Define sway range from the center of the screen
+        let swayRange: CGFloat = 150
+        let leftBoundary = size.width / 2 - swayRange
+        let rightBoundary = size.width / 2 + swayRange
+        
+        // Randomly choose initial sway direction
+        let initialDirectionIsLeft = Bool.random()
+        
+        // Define duration for each side sway
+        let durationRange: ClosedRange<CGFloat> = 1.0...1.0
+        let SameDuration = CGFloat.random(in: durationRange)
+        
+        let moveToLeft = SKAction.moveTo(x: leftBoundary, duration: TimeInterval(SameDuration))
+        let moveToRight = SKAction.moveTo(x: rightBoundary, duration: TimeInterval(SameDuration))
+        let moveToCenter = SKAction.moveTo(x: sprite.position.x, duration: TimeInterval(SameDuration))
+        
+        let swayActionPattern = initialDirectionIsLeft ?
+            SKAction.sequence([moveToLeft, moveToRight, moveToCenter]) :
+            SKAction.sequence([moveToRight, moveToLeft, moveToCenter])
+        
+        return SKAction.repeatForever(swayActionPattern)
+    }
+
+
 
 
     func didBegin(_ contact: SKPhysicsContact) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
-        
+
         if contactMask == (PhysicsCategory.kaki.rawValue | PhysicsCategory.player.rawValue) {
             if contact.bodyA.node?.name == "kaki" {
                 contact.bodyA.node?.removeFromParent()
@@ -206,7 +236,7 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
                 }
             }
             score += 1
-            kakiCount += 1 // Increment kaki count
+            kakiCount += 1 // Increment kaki to: sk.view, error: nil)
             
             // kabuki_upperの設定
             if kakiCount >= 15 {
