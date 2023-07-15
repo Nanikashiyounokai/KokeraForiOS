@@ -4,6 +4,7 @@ import GameplayKit
 import AVFoundation
 
 class EndlessGameController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,11 +15,27 @@ class EndlessGameController: UIViewController {
         let scene = EndlessGameScene(size: skView.bounds.size)
         scene.scaleMode = .aspectFill
         skView.presentScene(scene)
+        
+        // BGMファイルのURLを取得します
+        guard let bgmURL = Bundle.main.url(forResource: "playbgm", withExtension: "mp3") else {
+            print("BGMファイルが見つかりません")
+            return
+        }
+
+        // BGMプレーヤーを作成してBGMを再生します
+        do {
+            bgmPlayer = try AVAudioPlayer(contentsOf: bgmURL)
+            bgmPlayer?.numberOfLoops = -1  // ループ再生を設定（-1は無限ループ）
+            bgmPlayer?.play()
+        } catch {
+            print("BGMの再生に失敗しました: \(error)")
+        }
     }
 }
 
 class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
     
+    var player: AVAudioPlayer?
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!
     var kakiScoreNode: SKSpriteNode!

@@ -6,11 +6,35 @@
 //
 
 import UIKit
+import AVFAudio
 
 class Endlessover_kokera_ViewController: UIViewController {
+    
+    var failureSoundPlayer: AVAudioPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // BGM再生を停止します
+        bgmPlayer?.stop()
+        
+        guard let successSoundURL = Bundle.main.url(forResource: "failurese", withExtension: "mp3") else {
+            print("音声ファイルが見つかりません")
+            return
+        }
+        
+        // 音声プレーヤーを作成して音声を再生します
+        do {
+            failureSoundPlayer = try AVAudioPlayer(contentsOf: successSoundURL)
+            failureSoundPlayer?.numberOfLoops = 0  // ループ再生を設定しない（1回のみ再生）
+            failureSoundPlayer?.play()
+        } catch {
+            print("音声の再生に失敗しました: \(error)")
+        }
     }
     
     @IBOutlet weak var result: UILabel!
