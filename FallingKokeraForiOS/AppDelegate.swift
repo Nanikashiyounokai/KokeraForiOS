@@ -6,7 +6,12 @@
 //
 
 import UIKit
+
 import GoogleMobileAds //←広告用に追加
+
+import FirebaseCore
+import GoogleSignIn
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Google Mobile Ads SDKの初期化
         GADMobileAds.sharedInstance().start(completionHandler: nil) //←広告用に追加
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
     }
 

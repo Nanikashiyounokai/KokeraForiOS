@@ -40,6 +40,9 @@
 		95ABA42D2A62731C002CC30F /* Stage1_before_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ABA42C2A62731C002CC30F /* Stage1_before_ViewController.swift */; };
 		95ABA42F2A627372002CC30F /* EndlessGame_before_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ABA42E2A627372002CC30F /* EndlessGame_before_ViewController.swift */; };
 		95BB071A2A4EC61700C64E00 /* Stage5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */; };
+		CEC7CEBB2A515CBD002462D1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7CEBA2A515CBD002462D1 /* RegisterViewController.swift */; };
+		CEC7CEBD2A515E49002462D1 /* Register2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7CEBC2A515E49002462D1 /* Register2ViewController.swift */; };
+		CEC7CEBF2A516F95002462D1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEC7CEBE2A516F95002462D1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +82,9 @@
 		95ABA42C2A62731C002CC30F /* Stage1_before_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage1_before_ViewController.swift; sourceTree = "<group>"; };
 		95ABA42E2A627372002CC30F /* EndlessGame_before_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessGame_before_ViewController.swift; sourceTree = "<group>"; };
 		95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage5ViewController.swift; sourceTree = "<group>"; };
+		CEC7CEBA2A515CBD002462D1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CEC7CEBC2A515E49002462D1 /* Register2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register2ViewController.swift; sourceTree = "<group>"; };
+		CEC7CEBE2A516F95002462D1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F12229F183D0B0515BD8791A /* Pods_FallingKokeraForiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FallingKokeraForiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,6 +159,8 @@
 				39D6F28D2A5158EB007C4A1D /* AboutThisAppViewController.swift */,
 				3977A41D2A28B42000FDE039 /* CustomButton.swift */,
 				39DA2BC72A074B6400F3BE24 /* AppDelegate.swift */,
+				CEC7CEBA2A515CBD002462D1 /* RegisterViewController.swift */,
+				CEC7CEBC2A515E49002462D1 /* Register2ViewController.swift */,
 				39DA2BC92A074B6400F3BE24 /* SceneDelegate.swift */,
 				39DA2BCB2A074B6400F3BE24 /* ViewController.swift */,
 				9560004C2A623A5C006D7289 /* opbgm.mp3 */,
@@ -164,6 +172,7 @@
 				39DA2BD02A074B6800F3BE24 /* Assets.xcassets */,
 				39DA2BD22A074B6800F3BE24 /* LaunchScreen.storyboard */,
 				39DA2BD52A074B6800F3BE24 /* Info.plist */,
+				CEC7CEBE2A516F95002462D1 /* GoogleService-Info.plist */,
 				393ED5182A0E387200D7CCA0 /* GameScene.swift */,
 			);
 			path = FallingKokeraForiOS;
@@ -232,8 +241,12 @@
 				9560004D2A623A5C006D7289 /* opbgm.mp3 in Resources */,
 				956000542A623B00006D7289 /* getSE.mp3 in Resources */,
 				39DA2BD42A074B6800F3BE24 /* LaunchScreen.storyboard in Resources */,
+
 				9560004F2A623AEF006D7289 /* playbgm.mp3 in Resources */,
 				956000552A623B00006D7289 /* successse.mp3 in Resources */,
+
+				CEC7CEBF2A516F95002462D1 /* GoogleService-Info.plist in Resources */,
+
 				39DA2BD12A074B6800F3BE24 /* Assets.xcassets in Resources */,
 				39DA2BCF2A074B6400F3BE24 /* Main.storyboard in Resources */,
 				956000532A623B00006D7289 /* failurese.mp3 in Resources */,
@@ -243,7 +256,9 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+
 		6F4E93C412F2739D18ADB528 /* [CP] Embed Pods Frameworks */ = {
+
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -309,9 +324,11 @@
 				3977A4222A28F9CE00FDE039 /* StageGameHomeViewController.swift in Sources */,
 				95816D6A2A51241F00C53502 /* Stage7ViewController.swift in Sources */,
 				39DA2BCA2A074B6400F3BE24 /* SceneDelegate.swift in Sources */,
+				CEC7CEBB2A515CBD002462D1 /* RegisterViewController.swift in Sources */,
 				95BB071A2A4EC61700C64E00 /* Stage5ViewController.swift in Sources */,
 				95816D6E2A51243B00C53502 /* Stage9ViewController.swift in Sources */,
 				39CEDA7D2A3D5E080047A95F /* Gameover_Kaki_ViewController.swift in Sources */,
+				CEC7CEBD2A515E49002462D1 /* Register2ViewController.swift in Sources */,
 				3915B03B2A4309BB00CC754F /* Stage4ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,9 +477,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3GYNZU4HS2;
+				DEVELOPMENT_TEAM = U9JDU338GY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FallingKokeraForiOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "柿落とし";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -489,9 +507,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3GYNZU4HS2;
+				DEVELOPMENT_TEAM = U9JDU338GY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FallingKokeraForiOS/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "柿落とし";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
