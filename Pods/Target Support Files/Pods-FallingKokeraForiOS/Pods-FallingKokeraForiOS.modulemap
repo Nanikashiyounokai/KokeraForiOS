@@ -1,0 +1,6 @@
+framework module Pods_FallingKokeraForiOS {
+  umbrella header "Pods-FallingKokeraForiOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
