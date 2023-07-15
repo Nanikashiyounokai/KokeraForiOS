@@ -36,6 +36,7 @@ class EndlessGameController: UIViewController {
 class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
     
     var player: AVAudioPlayer?
+    var getsePlayer: AVAudioPlayer?
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!
     var kakiScoreNode: SKSpriteNode!
@@ -251,6 +252,20 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
                 if let index = kakiList.firstIndex(of: contact.bodyB.node as! SKSpriteNode) {
                     kakiList.remove(at: index)
                 }
+            }
+            // BGMファイルのURLを取得します
+            guard let getseURL = Bundle.main.url(forResource: "getSE", withExtension: "mp3") else {
+                print("BGMファイルが見つかりません")
+                return
+            }
+
+            // BGMプレーヤーを作成してBGMを再生します
+            do {
+                getsePlayer = try AVAudioPlayer(contentsOf: getseURL)
+                getsePlayer?.numberOfLoops = 0  // ループ再生を設定（-1は無限ループ）
+                getsePlayer?.play()
+            } catch {
+                print("BGMの再生に失敗しました: \(error)")
             }
             score += 1
             kakiCount += 1 // Increment kaki to: sk.view, error: nil)

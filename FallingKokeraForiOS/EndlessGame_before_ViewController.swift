@@ -1,21 +1,20 @@
+//
+//  EndlessGame_before_ViewController.swift
+//  FallingKokeraForiOS
+//
+//  Created by kouta yamaguchi on 2023/07/15.
+//
+
 import UIKit
 import GoogleMobileAds
 
-class StageViewController: UIViewController, GADBannerViewDelegate {
+class EndlessGame_before_ViewController: UIViewController, GADBannerViewDelegate {
     
-    var bannerView: GADBannerView!
-    
-    @IBOutlet weak var stageButton1: UIButton!
-    @IBOutlet weak var stageButton2: UIButton!
-    @IBOutlet weak var stageButton3: UIButton!
-    @IBOutlet weak var stageButton4: UIButton!
-    @IBOutlet weak var stageButton5: UIButton!
-    @IBOutlet weak var stageButton6: UIButton!
-    @IBOutlet weak var stageButton7: UIButton!
-    @IBOutlet weak var stageButton8: UIButton!
-    @IBOutlet weak var stageButton9: UIButton!
-    
+    var bannerView: GADBannerView! 
+
     override func viewDidLoad() {
+        super.viewDidLoad()
+
         // In this case, we instantiate the banner with desired ad size.
         bannerView = GADBannerView(adSize: GADAdSizeBanner)
 
@@ -26,7 +25,6 @@ class StageViewController: UIViewController, GADBannerViewDelegate {
         bannerView.load(GADRequest())
         bannerView.delegate = self
     }
-    
     func addBannerViewToView(_ bannerView: GADBannerView) {
       bannerView.translatesAutoresizingMaskIntoConstraints = false
       view.addSubview(bannerView)
@@ -76,4 +74,15 @@ class StageViewController: UIViewController, GADBannerViewDelegate {
       print("bannerViewDidDismissScreen")
     }
     
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
