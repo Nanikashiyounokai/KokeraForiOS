@@ -3,7 +3,7 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
-class Stage6ViewController: UIViewController {
+class Stage7ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,13 +11,13 @@ class Stage6ViewController: UIViewController {
         let skView = SKView(frame: view.bounds)
         view.addSubview(skView)
 
-        let scene = StageScene6(size: skView.bounds.size)
+        let scene = StageScene7(size: skView.bounds.size)
         scene.scaleMode = .aspectFill
         skView.presentScene(scene)
     }
 }
 
-class StageScene6: SKScene, SKPhysicsContactDelegate {
+class StageScene7: SKScene, SKPhysicsContactDelegate {
     
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!
@@ -30,11 +30,22 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
     
     var kakiList: [SKSpriteNode] = []
     
+    var kabukiUpperNode: SKSpriteNode!
+    
     override func didMove(to view: SKView) {
         backgroundColor = .white
         
         physicsWorld.contactDelegate = self
         physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        
+        // kabuki_upperの設定
+        kabukiUpperNode = SKSpriteNode(imageNamed: "kabuki_upper")
+        kabukiUpperNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
+        kabukiUpperNode.isHidden = true
+        kabukiUpperNode.zPosition = 1  // <-- 追加
+        addChild(kabukiUpperNode)
+                
+            startKabukiCycle()
         
         playerBar = SKSpriteNode(color: .black, size: CGSize(width: 50, height: 10))
         playerBar.position = CGPoint(x: size.width / 2, y: 100)
@@ -79,6 +90,7 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         let sequenceAction = SKAction.sequence([generateAction, waitAction])
         let repeatAction = SKAction.repeatForever(sequenceAction)
         run(repeatAction)
+        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -89,51 +101,47 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         playerBar.position.x = newX
     }
     
+    func startKabukiCycle() {
+        let appearDuration: TimeInterval = Double.random(in: 5...10)
+        let disappearDuration: TimeInterval = Double.random(in: 3...5)
+        
+        let appearAction = SKAction.run { [weak self] in
+            self?.kabukiUpperNode.isHidden = false
+        }
+        let waitAppearAction = SKAction.wait(forDuration: appearDuration)
+        let disappearAction = SKAction.run { [weak self] in
+            self?.kabukiUpperNode.isHidden = true
+        }
+        let waitDisappearAction = SKAction.wait(forDuration: disappearDuration)
+        let sequenceAction = SKAction.sequence([appearAction, waitAppearAction, disappearAction, waitDisappearAction])
+        let repeatAction = SKAction.repeatForever(sequenceAction)
+        run(repeatAction)
+    }
+    
     func generateImages() {
         let isKaki = Bool.random()
 
-        let spriteName = isKaki ? "kaki_nomal" : "kokera_nomal"
+        let spriteName = isKaki ? "kaki_small" : "kokera_small"
         let sprite = SKSpriteNode(imageNamed: spriteName)
 
+        let xRange = sprite.size.width / 2 + 25...size.width - sprite.size.width / 2 - 25
         let yRange = size.height - sprite.size.height / 2 - 100...size.height - sprite.size.height / 2
+
+        let startX = CGFloat.random(in: xRange)
+        let endX = CGFloat.random(in: xRange)
         let y = CGFloat.random(in: yRange)
 
-        // Set start position to the middle of the screen
-        sprite.position = CGPoint(x: size.width / 2, y: y)
+        sprite.position = CGPoint(x: startX, y: y)
         sprite.name = isKaki ? "kaki" : "kokera"
 
         addChild(sprite)
         kakiList.append(sprite)
 
         let destinationY = -sprite.size.height / 2
-        let moveVerticalAction = SKAction.moveTo(y: destinationY, duration: 6)
-
-        // Define sway range from the center of the screen
-        let swayRange: CGFloat = 150
-        let leftBoundary = size.width / 2 - swayRange
-        let rightBoundary = size.width / 2 + swayRange
-
-        // Randomly choose initial sway direction
-        let initialDirectionIsLeft = Bool.random()
-
-        // Define duration for each side sway
-        let durationRange: ClosedRange<CGFloat> = 0.3...1.0
-        let SameDuration = CGFloat.random(in: durationRange)
-
-        let moveToLeft = SKAction.moveTo(x: leftBoundary, duration: TimeInterval(SameDuration))
-        let moveToRight = SKAction.moveTo(x: rightBoundary, duration: TimeInterval(SameDuration))
-        let moveToCenter = SKAction.moveTo(x: sprite.position.x, duration: TimeInterval(SameDuration))
-
-        let swayActionPattern = initialDirectionIsLeft ?
-            SKAction.sequence([moveToLeft, moveToRight, moveToCenter]) :
-            SKAction.sequence([moveToRight, moveToLeft, moveToCenter])
-
-        let swayAction = SKAction.repeatForever(swayActionPattern)
-
-        let combinedAction = SKAction.group([moveVerticalAction, swayAction])
-        
+        let moveAction = SKAction.moveTo(y: destinationY, duration: 6)
         let removeAction = SKAction.removeFromParent()
-        let sequence: SKAction = SKAction.sequence([combinedAction, removeAction])
+        let sequence: SKAction = SKAction.sequence([moveAction, removeAction])
+
         sprite.run(sequence)
 
         sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
@@ -145,7 +153,6 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.categoryBitMask = isKaki ? PhysicsCategory.kaki.rawValue : PhysicsCategory.kokera.rawValue
         sprite.physicsBody?.contactTestBitMask = PhysicsCategory.ground.rawValue
     }
-
 
 
     func didBegin(_ contact: SKPhysicsContact) {
@@ -213,3 +220,4 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         }
     }
 }
+

@@ -3,7 +3,7 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
-class Stage6ViewController: UIViewController {
+class Stage8ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,13 +11,13 @@ class Stage6ViewController: UIViewController {
         let skView = SKView(frame: view.bounds)
         view.addSubview(skView)
 
-        let scene = StageScene6(size: skView.bounds.size)
+        let scene = StageScene8(size: skView.bounds.size)
         scene.scaleMode = .aspectFill
         skView.presentScene(scene)
     }
 }
 
-class StageScene6: SKScene, SKPhysicsContactDelegate {
+class StageScene8: SKScene, SKPhysicsContactDelegate {
     
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!
@@ -79,6 +79,8 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         let sequenceAction = SKAction.sequence([generateAction, waitAction])
         let repeatAction = SKAction.repeatForever(sequenceAction)
         run(repeatAction)
+        
+        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -89,51 +91,42 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         playerBar.position.x = newX
     }
     
+    
+    
     func generateImages() {
         let isKaki = Bool.random()
 
-        let spriteName = isKaki ? "kaki_nomal" : "kokera_nomal"
+        let spriteName = isKaki ? "kaki_small" : "kokera_small"
         let sprite = SKSpriteNode(imageNamed: spriteName)
 
+        let xRange = sprite.size.width / 2 + 25...size.width - sprite.size.width / 2 - 25
         let yRange = size.height - sprite.size.height / 2 - 100...size.height - sprite.size.height / 2
+
+        let startX = CGFloat.random(in: xRange)
+        let endX = CGFloat.random(in: xRange)
         let y = CGFloat.random(in: yRange)
 
-        // Set start position to the middle of the screen
-        sprite.position = CGPoint(x: size.width / 2, y: y)
+        sprite.position = CGPoint(x: startX, y: y)
         sprite.name = isKaki ? "kaki" : "kokera"
 
         addChild(sprite)
         kakiList.append(sprite)
 
         let destinationY = -sprite.size.height / 2
-        let moveVerticalAction = SKAction.moveTo(y: destinationY, duration: 6)
 
-        // Define sway range from the center of the screen
-        let swayRange: CGFloat = 150
-        let leftBoundary = size.width / 2 - swayRange
-        let rightBoundary = size.width / 2 + swayRange
+        // Randomly select the rotation direction
+        let rotateDirection = Bool.random() ? CGFloat.pi * 2 : -CGFloat.pi * 2
 
-        // Randomly choose initial sway direction
-        let initialDirectionIsLeft = Bool.random()
+        // Create a rotation action
+        let rotationAction = SKAction.rotate(byAngle: rotateDirection, duration: 1.5)
+        let repeatForeverAction = SKAction.repeatForever(rotationAction)
 
-        // Define duration for each side sway
-        let durationRange: ClosedRange<CGFloat> = 0.3...1.0
-        let SameDuration = CGFloat.random(in: durationRange)
-
-        let moveToLeft = SKAction.moveTo(x: leftBoundary, duration: TimeInterval(SameDuration))
-        let moveToRight = SKAction.moveTo(x: rightBoundary, duration: TimeInterval(SameDuration))
-        let moveToCenter = SKAction.moveTo(x: sprite.position.x, duration: TimeInterval(SameDuration))
-
-        let swayActionPattern = initialDirectionIsLeft ?
-            SKAction.sequence([moveToLeft, moveToRight, moveToCenter]) :
-            SKAction.sequence([moveToRight, moveToLeft, moveToCenter])
-
-        let swayAction = SKAction.repeatForever(swayActionPattern)
-
-        let combinedAction = SKAction.group([moveVerticalAction, swayAction])
-        
+        // Move and rotate the sprite simultaneously
+        let moveAction = SKAction.moveTo(y: destinationY, duration: 6)
+        let groupAction = SKAction.group([moveAction, repeatForeverAction])
         let removeAction = SKAction.removeFromParent()
-        let sequence: SKAction = SKAction.sequence([combinedAction, removeAction])
+        let sequence: SKAction = SKAction.sequence([groupAction, removeAction])
+
         sprite.run(sequence)
 
         sprite.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
@@ -141,12 +134,14 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.collisionBitMask = 0
         sprite.physicsBody?.contactTestBitMask = PhysicsCategory.player.rawValue
         sprite.physicsBody?.isDynamic = true
-        
+
         sprite.physicsBody?.categoryBitMask = isKaki ? PhysicsCategory.kaki.rawValue : PhysicsCategory.kokera.rawValue
         sprite.physicsBody?.contactTestBitMask = PhysicsCategory.ground.rawValue
+
     }
 
 
+    
 
     func didBegin(_ contact: SKPhysicsContact) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
@@ -175,7 +170,7 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         } else if contactMask == (PhysicsCategory.kaki.rawValue | PhysicsCategory.ground.rawValue) {
             // kakiと地面が接触した場合、gameover_kakiというStoryboard IDの画面に遷移
             failControlView(withIdentifier: "gameover_kaki")
-        }else if contactMask == (PhysicsCategory.kokera.rawValue | PhysicsCategory.ground.rawValue) {
+        } else if contactMask == (PhysicsCategory.kokera.rawValue | PhysicsCategory.ground.rawValue) {
             // kokeraと地面が接触した場合、kokeraを画面から消す
             if contact.bodyA.node?.name == "kokera" {
                 contact.bodyA.node?.removeFromParent()
@@ -184,6 +179,7 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
+
     
     func clearControlView() {
         DispatchQueue.main.async {
@@ -213,3 +209,4 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         }
     }
 }
+
