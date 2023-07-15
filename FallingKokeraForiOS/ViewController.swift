@@ -1,11 +1,30 @@
 import UIKit
 import SpriteKit
+import AVFoundation
+
+var bgmPlayer: AVAudioPlayer?
 
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         addBackgroundView()
+        // BGMファイルのURLを取得します
+        guard let bgmURL = Bundle.main.url(forResource: "opbgm", withExtension: "mp3") else {
+            print("BGMファイルが見つかりません")
+            return
+        }
+
+        // BGMプレーヤーを作成してBGMを再生します
+        do {
+            bgmPlayer = try AVAudioPlayer(contentsOf: bgmURL)
+            bgmPlayer?.numberOfLoops = -1  // ループ再生を設定（-1は無限ループ）
+            bgmPlayer?.play()
+        } catch {
+            print("BGMの再生に失敗しました: \(error)")
+        }
+
     }
     
     func addBackgroundView() {

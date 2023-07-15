@@ -14,11 +14,28 @@ class Stage3ViewController: UIViewController {
         let scene = StageScene3(size: skView.bounds.size)
         scene.scaleMode = .aspectFill
         skView.presentScene(scene)
+        
+        // BGMファイルのURLを取得します
+        guard let bgmURL = Bundle.main.url(forResource: "playbgm", withExtension: "mp3") else {
+            print("BGMファイルが見つかりません")
+            return
+        }
+
+        // BGMプレーヤーを作成してBGMを再生します
+        do {
+            bgmPlayer = try AVAudioPlayer(contentsOf: bgmURL)
+            bgmPlayer?.numberOfLoops = -1  // ループ再生を設定（-1は無限ループ）
+            bgmPlayer?.play()
+        } catch {
+            print("BGMの再生に失敗しました: \(error)")
+        }
     }
 }
 
 class StageScene3: SKScene, SKPhysicsContactDelegate {
     
+    var player: AVAudioPlayer?
+    var getsePlayer: AVAudioPlayer?
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!
     var kakiScoreNode: SKSpriteNode!
@@ -181,6 +198,19 @@ class StageScene3: SKScene, SKPhysicsContactDelegate {
             } else if contact.bodyB.node?.name == "kaki" {
                 contact.bodyB.node?.removeFromParent()
                 score += 1
+            }
+            guard let getseURL = Bundle.main.url(forResource: "getSE", withExtension: "mp3") else {
+                print("BGMファイルが見つかりません")
+                return
+            }
+
+            // BGMプレーヤーを作成してBGMを再生します
+            do {
+                getsePlayer = try AVAudioPlayer(contentsOf: getseURL)
+                getsePlayer?.numberOfLoops = 0  // ループ再生を設定（-1は無限ループ）
+                getsePlayer?.play()
+            } catch {
+                print("BGMの再生に失敗しました: \(error)")
             }
         }
     }
