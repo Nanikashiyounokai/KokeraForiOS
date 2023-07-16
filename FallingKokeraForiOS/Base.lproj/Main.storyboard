@@ -294,7 +294,7 @@
         <!--Stage2 View Controller-->
         <scene sceneID="toQ-Kw-CNg">
             <objects>
-                <viewController id="7ZT-Eo-1KB" customClass="Stage2ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stage2" id="7ZT-Eo-1KB" customClass="Stage2ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="11P-p2-PXv">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -310,7 +310,7 @@
         <!--Stage4 View Controller-->
         <scene sceneID="pEW-rh-zHP">
             <objects>
-                <viewController id="lJM-Yj-c9d" customClass="Stage4ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stage4" id="lJM-Yj-c9d" customClass="Stage4ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EXP-sb-JIH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -334,7 +334,7 @@
         <!--Stage7 View Controller-->
         <scene sceneID="5Z0-x9-bji">
             <objects>
-                <viewController id="9RG-du-I11" customClass="Stage7ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stage7" id="9RG-du-I11" customClass="Stage7ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4aZ-5L-WSh">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -350,7 +350,7 @@
         <!--Stage8 View Controller-->
         <scene sceneID="JYg-jp-tKQ">
             <objects>
-                <viewController id="Fnl-tx-SlS" customClass="Stage8ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stage8" id="Fnl-tx-SlS" customClass="Stage8ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vcz-Xz-o2w">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -366,7 +366,7 @@
         <!--Stage9 View Controller-->
         <scene sceneID="BVy-wt-J3C">
             <objects>
-                <viewController id="xbX-26-tzH" customClass="Stage9ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stage9" id="xbX-26-tzH" customClass="Stage9ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GKY-ZZ-EdW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -382,7 +382,7 @@
         <!--Stage5 View Controller-->
         <scene sceneID="TdB-vg-kT6">
             <objects>
-                <viewController id="pON-BY-x7V" customClass="Stage5ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stage5" id="pON-BY-x7V" customClass="Stage5ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yop-IS-N1J">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -398,7 +398,7 @@
         <!--Stage6 View Controller-->
         <scene sceneID="sQk-Ul-4bJ">
             <objects>
-                <viewController id="HgY-51-V1j" customClass="Stage6ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stage6" id="HgY-51-V1j" customClass="Stage6ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4sm-uf-kic">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -414,7 +414,7 @@
         <!--Stage3 View Controller-->
         <scene sceneID="c6X-Yk-fKh">
             <objects>
-                <viewController id="z2o-MX-1jl" customClass="Stage3ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stage3" id="z2o-MX-1jl" customClass="Stage3ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vDu-88-E8b">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -489,7 +489,7 @@
         <!--Stage1 View Controller-->
         <scene sceneID="VT0-mM-hLc">
             <objects>
-                <viewController id="A38-EF-mYz" customClass="Stage1ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stage1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A38-EF-mYz" customClass="Stage1ViewController" customModule="FallingKokeraForiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bNO-wn-MAn">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -538,10 +538,13 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3d5-ek-aQo" customClass="CustomButton" customModule="FallingKokeraForiOS" customModuleProvider="target">
                                 <rect key="frame" x="57" y="594" width="279" height="42"/>
                                 <color key="backgroundColor" red="0.89808791880000005" green="0.89800959830000004" blue="0.91853839159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="279" id="JgQ-NO-gCO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="次のステージ（未実装）">
+                                <state key="normal" title="次のステージ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" systemColor="systemGray3Color"/>
                                 </state>
@@ -612,7 +615,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="もう一度（未実装）">
+                                <state key="normal" title="もう一度">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" systemColor="systemGray3Color"/>
                                 </state>
@@ -720,7 +723,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bS1-RQ-F9Z" customClass="CustomButton" customModule="FallingKokeraForiOS" customModuleProvider="target">
-                                <rect key="frame" x="42" y="646.66666666666663" width="309" height="42"/>
+                                <rect key="frame" x="42" y="646.66666666666663" width="308" height="42"/>
                                 <color key="backgroundColor" red="0.89808791880000005" green="0.89800959830000004" blue="0.91853839159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="pR2-l4-YyH"/>
@@ -760,15 +763,16 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ecx-FH-ojV" customClass="CustomButton" customModule="FallingKokeraForiOS" customModuleProvider="target">
-                                <rect key="frame" x="42" y="565" width="309" height="42"/>
+                                <rect key="frame" x="42" y="565" width="308" height="42"/>
                                 <color key="backgroundColor" red="0.89808791880000005" green="0.89800959830000004" blue="0.91853839159999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="308" id="i4o-OZ-YIp"/>
                                     <constraint firstAttribute="height" constant="42" id="vdA-2i-Gp1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="もう一度（未実装）">
+                                <state key="normal" title="もう一度">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" systemColor="systemGray3Color"/>
                                 </state>
@@ -792,7 +796,6 @@
                             <constraint firstItem="Lmk-YA-5iG" firstAttribute="leading" secondItem="RfT-JW-JHl" secondAttribute="leading" constant="80" id="3Ds-Bc-uE4"/>
                             <constraint firstItem="Lmk-YA-5iG" firstAttribute="top" secondItem="RfT-JW-JHl" secondAttribute="top" constant="100" id="4hR-l2-XUB"/>
                             <constraint firstItem="xOM-JO-ku2" firstAttribute="centerY" secondItem="od1-Qu-S1Y" secondAttribute="centerY" id="61y-BF-500"/>
-                            <constraint firstItem="Ecx-FH-ojV" firstAttribute="centerX" secondItem="od1-Qu-S1Y" secondAttribute="centerX" id="7rd-zj-ekJ"/>
                             <constraint firstItem="Ecx-FH-ojV" firstAttribute="trailing" secondItem="bS1-RQ-F9Z" secondAttribute="trailing" id="91P-DN-TVu"/>
                             <constraint firstItem="Ecx-FH-ojV" firstAttribute="leading" secondItem="bS1-RQ-F9Z" secondAttribute="leading" id="B6O-Ud-PaC"/>
                             <constraint firstItem="xOM-JO-ku2" firstAttribute="trailing" secondItem="od1-Qu-S1Y" secondAttribute="trailingMargin" id="BvL-rA-Zge"/>

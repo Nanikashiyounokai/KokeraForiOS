@@ -4,6 +4,7 @@ import AVFAudio
 import GoogleMobileAds
 
 class Gameover_Kaki_ViewController: UIViewController , GADBannerViewDelegate {
+    var sourceStage: Int? // ここに遷移元のステージ番号をセットします
     
     var bannerView: GADBannerView!
     
@@ -96,7 +97,67 @@ class Gameover_Kaki_ViewController: UIViewController , GADBannerViewDelegate {
     
 
     @IBAction func retry(_ sender: Any) {
+        switch sourceStage {
+        case 1:
+            // Stage2ViewControllerに遷移するコード
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            if let stage1VC = storyboard.instantiateViewController(withIdentifier: "stage1") as? Stage1ViewController {
+                navigationController?.pushViewController(stage1VC, animated: true)
+            }
+        case 2:
+            // Stage3ViewControllerに遷移するコード
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let stage2VC = storyboard.instantiateViewController(withIdentifier: "stage2") as? Stage3ViewController {
+                navigationController?.pushViewController(stage2VC, animated: true)
+            }
+        case 3:
+            // Stage3ViewControllerに遷移するコード
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let stage3VC = storyboard.instantiateViewController(withIdentifier: "stage3") as? Stage3ViewController {
+                navigationController?.pushViewController(stage3VC, animated: true)
+            }
+        case 4:
+            // Stage3ViewControllerに遷移するコード
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let stage4VC = storyboard.instantiateViewController(withIdentifier: "stage4") as? Stage4ViewController {
+                navigationController?.pushViewController(stage4VC, animated: true)
+            }
+        case 5:
+            // Stage3ViewControllerに遷移するコード
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let stage5VC = storyboard.instantiateViewController(withIdentifier: "stage5") as? Stage5ViewController {
+                navigationController?.pushViewController(stage5VC, animated: true)
+            }
+        case 6:
+            // Stage3ViewControllerに遷移するコード
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let stage6VC = storyboard.instantiateViewController(withIdentifier: "stage6") as? Stage6ViewController {
+                navigationController?.pushViewController(stage6VC, animated: true)
+            }
+        case 7:
+            // Stage3ViewControllerに遷移するコード
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let stage7VC = storyboard.instantiateViewController(withIdentifier: "stage7") as? Stage7ViewController {
+                navigationController?.pushViewController(stage7VC, animated: true)
+            }
+        case 8:
+            // Stage3ViewControllerに遷移するコード
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let stage8VC = storyboard.instantiateViewController(withIdentifier: "stage8") as? Stage8ViewController {
+                navigationController?.pushViewController(stage8VC, animated: true)
+            }
+        case 9:
+            // Stage3ViewControllerに遷移するコード
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let stage9VC = storyboard.instantiateViewController(withIdentifier: "stage9") as? Stage9ViewController {
+                navigationController?.pushViewController(stage9VC, animated: true)
+            }
+        default:
+            break
+        }
     }
+    
     @IBAction func home(_ sender: Any) {
         dismiss(animated: true) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
