@@ -98,7 +98,7 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
         groundNode.physicsBody?.contactTestBitMask = PhysicsCategory.kaki.rawValue
         groundNode.physicsBody?.isDynamic = false
         
-        let generateDuration: TimeInterval = 5.0 // kakiやkokeraの生成にかかる時間
+        let generateDuration: TimeInterval = 3.0 // kakiやkokeraの生成にかかる時間
 
         let generateAction = SKAction.run { [weak self] in
             self?.generateImages()
@@ -161,19 +161,19 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
         // Set different vertical move duration based on the kaki count
         var moveVerticalDuration: Double
         if kakiCount < 6 {
-            moveVerticalDuration = 6.0
-        } else if kakiCount < 10 {
-            moveVerticalDuration = 4.0
-        } else if kakiCount < 30 {
-            moveVerticalDuration = 8.0
-        } else if kakiCount < 40 {
-            moveVerticalDuration = 6.0
-        } else if kakiCount < 45 {
             moveVerticalDuration = 5.0
-        } else if kakiCount < 50 {
-            moveVerticalDuration = 4.5
-        } else {
+        } else if kakiCount < 10 {
+            moveVerticalDuration = 3.0
+        } else if kakiCount < 30 {
+            moveVerticalDuration = 7.0
+        } else if kakiCount < 40 {
+            moveVerticalDuration = 5.0
+        } else if kakiCount < 45 {
             moveVerticalDuration = 4.0
+        } else if kakiCount < 50 {
+            moveVerticalDuration = 3.5
+        } else {
+            moveVerticalDuration = 3.0
         }
         let moveVerticalAction = SKAction.moveTo(y: destinationY, duration: moveVerticalDuration)
         
@@ -220,9 +220,18 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
         // Randomly choose initial sway direction
         let initialDirectionIsLeft = Bool.random()
         
-        // Define duration for each side sway
-        let durationRange: ClosedRange<CGFloat> = 1.0...1.0
-        let SameDuration = CGFloat.random(in: durationRange)
+
+        // Define duration for each side sway based on the kakiCount
+        var SameDuration: CGFloat
+        if kakiCount < 25 {
+            SameDuration = 1.4
+        } else if kakiCount < 35 {
+            SameDuration = 1.1
+        } else if kakiCount < 45 {
+            SameDuration = 0.8
+        } else {
+            SameDuration = 0.5
+        }
         
         let moveToLeft = SKAction.moveTo(x: leftBoundary, duration: TimeInterval(SameDuration))
         let moveToRight = SKAction.moveTo(x: rightBoundary, duration: TimeInterval(SameDuration))

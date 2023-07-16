@@ -86,7 +86,7 @@ class StageScene8: SKScene, SKPhysicsContactDelegate {
         groundNode.physicsBody?.contactTestBitMask = PhysicsCategory.kaki.rawValue
         groundNode.physicsBody?.isDynamic = false
         
-        let generateDuration: TimeInterval = 5.0 // kakiやkokeraの生成にかかる時間
+        let generateDuration: TimeInterval = 3.0 // kakiやkokeraの生成にかかる時間
 
         let generateAction = SKAction.run { [weak self] in
             self?.generateImages()
@@ -139,7 +139,7 @@ class StageScene8: SKScene, SKPhysicsContactDelegate {
         let repeatForeverAction = SKAction.repeatForever(rotationAction)
 
         // Move and rotate the sprite simultaneously
-        let moveAction = SKAction.moveTo(y: destinationY, duration: 6)
+        let moveAction = SKAction.moveTo(y: destinationY, duration: 3)
         let groupAction = SKAction.group([moveAction, repeatForeverAction])
         let removeAction = SKAction.removeFromParent()
         let sequence: SKAction = SKAction.sequence([groupAction, removeAction])
@@ -214,7 +214,8 @@ class StageScene8: SKScene, SKPhysicsContactDelegate {
     func clearControlView() {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let clearViewController = storyboard.instantiateViewController(withIdentifier: "gameclear") as? UIViewController {
+            if let clearViewController = storyboard.instantiateViewController(withIdentifier: "gameclear") as? ClearViewController {
+                clearViewController.sourceStage = 8
                 clearViewController.modalPresentationStyle = .fullScreen
                 
                 // ナビゲーションスタックをクリアしてPush遷移
@@ -228,13 +229,22 @@ class StageScene8: SKScene, SKPhysicsContactDelegate {
     func failControlView(withIdentifier identifier: String) {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let failViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? UIViewController {
-                failViewController.modalPresentationStyle = .fullScreen
+            if let failViewControllerKokera = storyboard.instantiateViewController(withIdentifier: identifier) as? Gameover_Kokera_ViewController {
+                failViewControllerKokera.sourceStage = 8
+                failViewControllerKokera.modalPresentationStyle = .fullScreen
                 
-                // ナビゲーションスタックをクリアしてPush遷移
                 if let navigationController = self.view?.window?.rootViewController as? UINavigationController {
-                    navigationController.setViewControllers([failViewController], animated: true)
+                    navigationController.setViewControllers([failViewControllerKokera], animated: true)
                 }
+            } else if let failViewControllerKaki = storyboard.instantiateViewController(withIdentifier: identifier) as? Gameover_Kaki_ViewController {
+                failViewControllerKaki.sourceStage = 8
+                failViewControllerKaki.modalPresentationStyle = .fullScreen
+                
+                if let navigationController = self.view?.window?.rootViewController as? UINavigationController {
+                    navigationController.setViewControllers([failViewControllerKaki], animated: true)
+                }
+            } else {
+                print("Failed to instantiate ViewControllers from storyboard.")
             }
         }
     }

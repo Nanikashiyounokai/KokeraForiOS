@@ -86,7 +86,7 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         groundNode.physicsBody?.contactTestBitMask = PhysicsCategory.kaki.rawValue
         groundNode.physicsBody?.isDynamic = false
         
-        let generateDuration: TimeInterval = 5.0 // kakiやkokeraの生成にかかる時間
+        let generateDuration: TimeInterval = 3.0 // kakiやkokeraの生成にかかる時間
 
         let generateAction = SKAction.run { [weak self] in
             self?.generateImages()
@@ -123,7 +123,7 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         kakiList.append(sprite)
 
         let destinationY = -sprite.size.height / 2
-        let moveVerticalAction = SKAction.moveTo(y: destinationY, duration: 6)
+        let moveVerticalAction = SKAction.moveTo(y: destinationY, duration: 4)
 
         // Define sway range from the center of the screen
         let swayRange: CGFloat = 150
@@ -134,7 +134,7 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         let initialDirectionIsLeft = Bool.random()
 
         // Define duration for each side sway
-        let durationRange: ClosedRange<CGFloat> = 0.3...1.0
+        let durationRange: ClosedRange<CGFloat> = 0.4...1.5
         let SameDuration = CGFloat.random(in: durationRange)
 
         let moveToLeft = SKAction.moveTo(x: leftBoundary, duration: TimeInterval(SameDuration))
@@ -161,6 +161,7 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
         
         sprite.physicsBody?.categoryBitMask = isKaki ? PhysicsCategory.kaki.rawValue : PhysicsCategory.kokera.rawValue
         sprite.physicsBody?.contactTestBitMask = PhysicsCategory.ground.rawValue
+        
     }
 
 
@@ -218,7 +219,8 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
     func clearControlView() {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let clearViewController = storyboard.instantiateViewController(withIdentifier: "gameclear") as? UIViewController {
+            if let clearViewController = storyboard.instantiateViewController(withIdentifier: "gameclear") as? ClearViewController {
+                clearViewController.sourceStage = 6
                 clearViewController.modalPresentationStyle = .fullScreen
                 
                 // ナビゲーションスタックをクリアしてPush遷移
@@ -232,13 +234,22 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
     func failControlView(withIdentifier identifier: String) {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let failViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? UIViewController {
-                failViewController.modalPresentationStyle = .fullScreen
+            if let failViewControllerKokera = storyboard.instantiateViewController(withIdentifier: identifier) as? Gameover_Kokera_ViewController {
+                failViewControllerKokera.sourceStage = 6
+                failViewControllerKokera.modalPresentationStyle = .fullScreen
                 
-                // ナビゲーションスタックをクリアしてPush遷移
                 if let navigationController = self.view?.window?.rootViewController as? UINavigationController {
-                    navigationController.setViewControllers([failViewController], animated: true)
+                    navigationController.setViewControllers([failViewControllerKokera], animated: true)
                 }
+            } else if let failViewControllerKaki = storyboard.instantiateViewController(withIdentifier: identifier) as? Gameover_Kaki_ViewController {
+                failViewControllerKaki.sourceStage = 6
+                failViewControllerKaki.modalPresentationStyle = .fullScreen
+                
+                if let navigationController = self.view?.window?.rootViewController as? UINavigationController {
+                    navigationController.setViewControllers([failViewControllerKaki], animated: true)
+                }
+            } else {
+                print("Failed to instantiate ViewControllers from storyboard.")
             }
         }
     }
