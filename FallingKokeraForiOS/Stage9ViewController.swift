@@ -39,7 +39,7 @@ class StageScene9: SKScene, SKPhysicsContactDelegate {
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!
     var kakiScoreNode: SKSpriteNode!
-    var score: Int = 0 {
+    var score: Int = 9 {
         didSet {
             scoreLabel.text = "\(score)/10"
             }

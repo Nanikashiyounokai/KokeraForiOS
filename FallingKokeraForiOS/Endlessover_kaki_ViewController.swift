@@ -13,9 +13,15 @@ class Endlessover_kaki_ViewController: UIViewController, GADBannerViewDelegate {
     
     var failureSoundPlayer: AVAudioPlayer?
     var bannerView: GADBannerView!
+    var kakiCount: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 値が存在すれば、それをラベルに設定
+            if let kakiCount = self.kakiCount {
+                result.text = "\(kakiCount)"
+            }
         // In this case, we instantiate the banner with desired ad size.
         bannerView = GADBannerView(adSize: GADAdSizeBanner)
 

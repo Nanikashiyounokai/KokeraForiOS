@@ -320,12 +320,21 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
     func failControlView(withIdentifier identifier: String) {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let failViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? UIViewController {
-                failViewController.modalPresentationStyle = .fullScreen
+            if let failkokeraViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? Endlessover_kokera_ViewController {
+                failkokeraViewController.kakiCount = self.kakiCount // kakicount の値を渡す
+                failkokeraViewController.modalPresentationStyle = .fullScreen
                 
                 // ナビゲーションスタックをクリアしてPush遷移
                 if let navigationController = self.view?.window?.rootViewController as? UINavigationController {
-                    navigationController.setViewControllers([failViewController], animated: true)
+                    navigationController.setViewControllers([failkokeraViewController], animated: true)
+                }
+            }else if let failkakiViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? Endlessover_kaki_ViewController {
+                failkakiViewController.kakiCount = self.kakiCount // kakicount の値を渡す
+                failkakiViewController.modalPresentationStyle = .fullScreen
+                
+                // ナビゲーションスタックをクリアしてPush遷移
+                if let navigationController = self.view?.window?.rootViewController as? UINavigationController {
+                    navigationController.setViewControllers([failkakiViewController], animated: true)
                 }
             }
         }
