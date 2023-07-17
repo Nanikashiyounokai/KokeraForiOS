@@ -16,8 +16,16 @@ class ClearViewController: UIViewController , GADBannerViewDelegate {
     
     var successSoundPlayer: AVAudioPlayer?
     
+    
+    @IBOutlet weak var nextGameButton: UIButton!
+        
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // ボタンのインスタンスがある場合、そのタイトルを変更します。
+            if sourceStage == 9 {
+                nextGameButton.setTitle("もう一度", for: .normal)
+            }
 
         // BGM再生を停止します
         bgmPlayer?.stop()
@@ -119,6 +127,7 @@ class ClearViewController: UIViewController , GADBannerViewDelegate {
             }
         }
     }
+    
     @IBAction func nextgame(_ sender: Any) {
         switch sourceStage {
         case 1:
@@ -162,6 +171,12 @@ class ClearViewController: UIViewController , GADBannerViewDelegate {
             if let stage9VC = storyboard.instantiateViewController(withIdentifier: "stage9") as? Stage9ViewController {
                 navigationController?.pushViewController(stage9VC, animated: true)
             }
+        case 9:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let stage9VC = storyboard.instantiateViewController(withIdentifier: "stage9") as? Stage9ViewController {
+                navigationController?.pushViewController(stage9VC, animated: true)
+            }
+            
         default:
             break
         }
