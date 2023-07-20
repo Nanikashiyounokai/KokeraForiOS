@@ -1,9 +1,12 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import FirebaseDatabase
 import GoogleSignIn
 
 class Register2ViewController: UIViewController {
+    
+    var ref: DatabaseReference! = Database.database().reference()
 
     @IBOutlet weak var inputName: UITextField!
     
@@ -44,18 +47,18 @@ class Register2ViewController: UIViewController {
                 // 確定ボタンが押された時の処理をクロージャ実装する
                 (action: UIAlertAction!) -> Void in
                 
-                //実際の処理
-                // FirestoreのUsersコレクションにdocumentID = ログインしたuidでデータを作成する
-                Firestore.firestore().collection("users").document(uid!).setData([
-                    "name": userName!,
-                    "stage_point": "0",
-                    "endless_point": "0"
-                ], completion: { error in })
+                // RealtimeDatabaseにユーザー情報を登録
+                self.ref.child("user").child(uid!).setValue(
+                    ["EndlessScore": 0,
+                    "Name": userName!,
+                     "StageScore": 0] as [String : Any])
+                print("登録完了")
                 
                 let storyboard: UIStoryboard = self.storyboard!
-                let next = storyboard.instantiateViewController(withIdentifier: "top") as! ViewController
+                let next = storyboard.instantiateViewController(withIdentifier: "navi") as! UINavigationController
                 next.modalPresentationStyle = .fullScreen
-                self.navigationController?.pushViewController(next, animated: true)
+                self.present(next, animated: true, completion: nil)
+
 
             })
             // キャンセルボタンの処理
