@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>705900343360-9cjpbnec76vnl2stq8ve6kh4iin7kegv.apps.googleusercontent.com</string>
+	<string>552789382499-92q3ekrtnoeejvc5ssfsss4vi84v0lkh.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.705900343360-9cjpbnec76vnl2stq8ve6kh4iin7kegv</string>
+	<string>com.googleusercontent.apps.552789382499-92q3ekrtnoeejvc5ssfsss4vi84v0lkh</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>552789382499-7u05lo3lto74pvaf0kamluri50mp0ebu.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyB5s4g1ZpZojel4Y3hH8ucmRYu0L0lRJFw</string>
+	<string>AIzaSyDKxOnlN8j7wwTtHBXX0sJ5vEyhVNW8Ws4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>705900343360</string>
+	<string>552789382499</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.skart.FallingKokeraForiOS</string>
 	<key>PROJECT_ID</key>
-	<string>kokeraotoshiforios</string>
+	<string>kokeraotoshi-c4f45</string>
 	<key>STORAGE_BUCKET</key>
-	<string>kokeraotoshiforios.appspot.com</string>
+	<string>kokeraotoshi-c4f45.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +31,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:705900343360:ios:57af0137eff35326b8efa5</string>
+	<string>1:552789382499:ios:1155b79bdcc0725e2aaf56</string>
+	<key>DATABASE_URL</key>
+	<string>https://kokeraotoshi-c4f45-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

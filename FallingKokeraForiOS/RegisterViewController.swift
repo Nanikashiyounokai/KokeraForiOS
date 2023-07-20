@@ -8,44 +8,38 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import FirebaseDatabase
 import GoogleSignIn
 
 
 class RegisterViewController: UIViewController {
 
+    var ref: DatabaseReference! = Database.database().reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         // ユーザーが以前にサインインしていた場合は、アカウント登録画面をスキップ
         if let uid = Auth.auth().currentUser?.uid {
-            Firestore.firestore().collection("users").document(uid).getDocument { (snapshot, error) in
-                    if let error = error {
-                        // エラーハンドリング
-                        print("エラー: \(error.localizedDescription)")
-                        return
-                    }
-                
-                    // ユーザー名が登録されているか判定
-                    if let data = snapshot?.data() {
-                        let userName = data["name"] as? String
-                        print("ユーザー名: \(userName ?? "")")
-                        let storyboard: UIStoryboard = self.storyboard!
-                        let next = storyboard.instantiateViewController(withIdentifier: "top") as! ViewController
-                        next.modalPresentationStyle = .fullScreen
-                        self.present(next, animated: true, completion: nil)
-                        
-                    } else {
-                        // データが存在しない場合の処理
-                        print("ユーザー名が登録されていません")
-                        let storyboard: UIStoryboard = self.storyboard!
-                        let next = storyboard.instantiateViewController(withIdentifier: "Register2ViewController") as! Register2ViewController
-                        self.present(next, animated: true, completion: nil)
-                    }
+            self.ref.child("user").child(uid).getData(completion: { error, snapshot in
+                guard error == nil else {
+                    print(error!.localizedDescription)
+                    return
                 }
+                //ユーザー登録済
+                if let dic = snapshot?.value as? [String:AnyObject]{
+                    let storyboard: UIStoryboard = self.storyboard!
+                    let next = storyboard.instantiateViewController(withIdentifier: "navi") as! UINavigationController
+                    next.modalPresentationStyle = .fullScreen
+                    self.present(next, animated: true, completion: nil)
+                } else {
+                    //ユーザー未登録
+                    print("ユーザー名が登録されていません")
+                    let storyboard: UIStoryboard = self.storyboard!
+                    let next = storyboard.instantiateViewController(withIdentifier: "Register2ViewController") as! Register2ViewController
+                    self.present(next, animated: true, completion: nil)
+                }
+            })
+            
         }
     }
     
