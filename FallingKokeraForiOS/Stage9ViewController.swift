@@ -39,9 +39,9 @@ class StageScene9: SKScene, SKPhysicsContactDelegate {
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!
     var kakiScoreNode: SKSpriteNode!
-    var score: Int = 0 {
+    var score: Int = 9 {
         didSet {
-            scoreLabel.text = "\(score)/5"
+            scoreLabel.text = "\(score)/10"
             }
     }
     
@@ -78,7 +78,7 @@ class StageScene9: SKScene, SKPhysicsContactDelegate {
         scoreLabel.frame = CGRect(x: size.width - 70, y: 65, width: 200, height: 70)
         scoreLabel.textColor = .black
         scoreLabel.font = UIFont.systemFont(ofSize: 36)
-        scoreLabel.text = "\(score)/5"
+        scoreLabel.text = "\(score)/10"
         view.addSubview(scoreLabel)
         
         kakiScoreNode = SKSpriteNode(imageNamed: "kakiscore.png")
@@ -97,7 +97,7 @@ class StageScene9: SKScene, SKPhysicsContactDelegate {
         groundNode.physicsBody?.contactTestBitMask = PhysicsCategory.kaki.rawValue
         groundNode.physicsBody?.isDynamic = false
         
-        let generateDuration: TimeInterval = 5.0 // kakiやkokeraの生成にかかる時間
+        let generateDuration: TimeInterval = 3.0 // kakiやkokeraの生成にかかる時間
 
         let generateAction = SKAction.run { [weak self] in
             self?.generateImages()
@@ -156,13 +156,13 @@ class StageScene9: SKScene, SKPhysicsContactDelegate {
         kakiList.append(sprite)
 
         let destinationY = -sprite.size.height / 2
-        let moveVerticalAction = SKAction.moveTo(y: destinationY, duration: 6)
+        let moveVerticalAction = SKAction.moveTo(y: destinationY, duration: 4)
         
         // Randomly select the rotation direction
         let rotateDirection = Bool.random() ? CGFloat.pi * 2 : -CGFloat.pi * 2
         
         // Define rotation action
-            let rotateAction = SKAction.rotate(byAngle: CGFloat.pi * 2, duration: 1)
+        let rotateAction = SKAction.rotate(byAngle: CGFloat.pi * 2, duration: 1.5)
             let repeatForeverRotateAction = SKAction.repeatForever(rotateAction)
             
 
@@ -175,7 +175,7 @@ class StageScene9: SKScene, SKPhysicsContactDelegate {
         let initialDirectionIsLeft = Bool.random()
 
         // Define duration for each side sway
-        let durationRange: ClosedRange<CGFloat> = 0.3...1.0
+        let durationRange: ClosedRange<CGFloat> = 0.4...1.5
         let SameDuration = CGFloat.random(in: durationRange)
 
         let moveToLeft = SKAction.moveTo(x: leftBoundary, duration: TimeInterval(SameDuration))
@@ -236,7 +236,7 @@ class StageScene9: SKScene, SKPhysicsContactDelegate {
             }
             score += 1
             
-            if score >= 5 {
+            if score >= 10 {
                 // スコアが5になったら、gameclearというStoryboard IDの画面に遷移
                 clearControlView()
             }
@@ -259,7 +259,8 @@ class StageScene9: SKScene, SKPhysicsContactDelegate {
     func clearControlView() {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let clearViewController = storyboard.instantiateViewController(withIdentifier: "gameclear") as? UIViewController {
+            if let clearViewController = storyboard.instantiateViewController(withIdentifier: "gameclear") as? ClearViewController {
+                clearViewController.sourceStage = 9
                 clearViewController.modalPresentationStyle = .fullScreen
                 
                 // ナビゲーションスタックをクリアしてPush遷移
@@ -273,13 +274,22 @@ class StageScene9: SKScene, SKPhysicsContactDelegate {
     func failControlView(withIdentifier identifier: String) {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let failViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? UIViewController {
-                failViewController.modalPresentationStyle = .fullScreen
+            if let failViewControllerKokera = storyboard.instantiateViewController(withIdentifier: identifier) as? Gameover_Kokera_ViewController {
+                failViewControllerKokera.sourceStage = 9
+                failViewControllerKokera.modalPresentationStyle = .fullScreen
                 
-                // ナビゲーションスタックをクリアしてPush遷移
                 if let navigationController = self.view?.window?.rootViewController as? UINavigationController {
-                    navigationController.setViewControllers([failViewController], animated: true)
+                    navigationController.setViewControllers([failViewControllerKokera], animated: true)
                 }
+            } else if let failViewControllerKaki = storyboard.instantiateViewController(withIdentifier: identifier) as? Gameover_Kaki_ViewController {
+                failViewControllerKaki.sourceStage = 9
+                failViewControllerKaki.modalPresentationStyle = .fullScreen
+                
+                if let navigationController = self.view?.window?.rootViewController as? UINavigationController {
+                    navigationController.setViewControllers([failViewControllerKaki], animated: true)
+                }
+            } else {
+                print("Failed to instantiate ViewControllers from storyboard.")
             }
         }
     }

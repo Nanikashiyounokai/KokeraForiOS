@@ -36,6 +36,7 @@ class EndlessGameController: UIViewController {
 class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
     
     var player: AVAudioPlayer?
+    var getsePlayer: AVAudioPlayer?
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!
     var kakiScoreNode: SKSpriteNode!
@@ -97,7 +98,7 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
         groundNode.physicsBody?.contactTestBitMask = PhysicsCategory.kaki.rawValue
         groundNode.physicsBody?.isDynamic = false
         
-        let generateDuration: TimeInterval = 5.0 // kakiやkokeraの生成にかかる時間
+        let generateDuration: TimeInterval = 3.0 // kakiやkokeraの生成にかかる時間
 
         let generateAction = SKAction.run { [weak self] in
             self?.generateImages()
@@ -160,19 +161,19 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
         // Set different vertical move duration based on the kaki count
         var moveVerticalDuration: Double
         if kakiCount < 6 {
-            moveVerticalDuration = 6.0
-        } else if kakiCount < 10 {
-            moveVerticalDuration = 4.0
-        } else if kakiCount < 30 {
-            moveVerticalDuration = 8.0
-        } else if kakiCount < 40 {
-            moveVerticalDuration = 6.0
-        } else if kakiCount < 45 {
             moveVerticalDuration = 5.0
-        } else if kakiCount < 50 {
-            moveVerticalDuration = 4.5
-        } else {
+        } else if kakiCount < 10 {
+            moveVerticalDuration = 3.0
+        } else if kakiCount < 30 {
+            moveVerticalDuration = 7.0
+        } else if kakiCount < 40 {
+            moveVerticalDuration = 5.0
+        } else if kakiCount < 45 {
             moveVerticalDuration = 4.0
+        } else if kakiCount < 50 {
+            moveVerticalDuration = 3.5
+        } else {
+            moveVerticalDuration = 3.0
         }
         let moveVerticalAction = SKAction.moveTo(y: destinationY, duration: moveVerticalDuration)
         
@@ -219,9 +220,18 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
         // Randomly choose initial sway direction
         let initialDirectionIsLeft = Bool.random()
         
-        // Define duration for each side sway
-        let durationRange: ClosedRange<CGFloat> = 1.0...1.0
-        let SameDuration = CGFloat.random(in: durationRange)
+
+        // Define duration for each side sway based on the kakiCount
+        var SameDuration: CGFloat
+        if kakiCount < 25 {
+            SameDuration = 1.4
+        } else if kakiCount < 35 {
+            SameDuration = 1.1
+        } else if kakiCount < 45 {
+            SameDuration = 0.8
+        } else {
+            SameDuration = 0.5
+        }
         
         let moveToLeft = SKAction.moveTo(x: leftBoundary, duration: TimeInterval(SameDuration))
         let moveToRight = SKAction.moveTo(x: rightBoundary, duration: TimeInterval(SameDuration))
@@ -251,6 +261,20 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
                 if let index = kakiList.firstIndex(of: contact.bodyB.node as! SKSpriteNode) {
                     kakiList.remove(at: index)
                 }
+            }
+            // BGMファイルのURLを取得します
+            guard let getseURL = Bundle.main.url(forResource: "getSE", withExtension: "mp3") else {
+                print("BGMファイルが見つかりません")
+                return
+            }
+
+            // BGMプレーヤーを作成してBGMを再生します
+            do {
+                getsePlayer = try AVAudioPlayer(contentsOf: getseURL)
+                getsePlayer?.numberOfLoops = 0  // ループ再生を設定（-1は無限ループ）
+                getsePlayer?.play()
+            } catch {
+                print("BGMの再生に失敗しました: \(error)")
             }
             score += 1
             kakiCount += 1 // Increment kaki to: sk.view, error: nil)
@@ -296,12 +320,21 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
     func failControlView(withIdentifier identifier: String) {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let failViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? UIViewController {
-                failViewController.modalPresentationStyle = .fullScreen
+            if let failkokeraViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? Endlessover_kokera_ViewController {
+                failkokeraViewController.kakiCount = self.kakiCount // kakicount の値を渡す
+                failkokeraViewController.modalPresentationStyle = .fullScreen
                 
                 // ナビゲーションスタックをクリアしてPush遷移
                 if let navigationController = self.view?.window?.rootViewController as? UINavigationController {
-                    navigationController.setViewControllers([failViewController], animated: true)
+                    navigationController.setViewControllers([failkokeraViewController], animated: true)
+                }
+            }else if let failkakiViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? Endlessover_kaki_ViewController {
+                failkakiViewController.kakiCount = self.kakiCount // kakicount の値を渡す
+                failkakiViewController.modalPresentationStyle = .fullScreen
+                
+                // ナビゲーションスタックをクリアしてPush遷移
+                if let navigationController = self.view?.window?.rootViewController as? UINavigationController {
+                    navigationController.setViewControllers([failkakiViewController], animated: true)
                 }
             }
         }

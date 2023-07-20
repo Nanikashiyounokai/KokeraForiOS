@@ -196,7 +196,8 @@ class StageScene2: SKScene, SKPhysicsContactDelegate {
     func clearControlView() {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let clearViewController = storyboard.instantiateViewController(withIdentifier: "gameclear") as? UIViewController {
+            if let clearViewController = storyboard.instantiateViewController(withIdentifier: "gameclear") as? ClearViewController {
+                clearViewController.sourceStage = 2
                 clearViewController.modalPresentationStyle = .fullScreen
                 
                 // ナビゲーションスタックをクリアしてPush遷移
@@ -210,13 +211,22 @@ class StageScene2: SKScene, SKPhysicsContactDelegate {
     func failControlView(withIdentifier identifier: String) {
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let failViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? UIViewController {
-                failViewController.modalPresentationStyle = .fullScreen
+            if let failViewControllerKokera = storyboard.instantiateViewController(withIdentifier: identifier) as? Gameover_Kokera_ViewController {
+                failViewControllerKokera.sourceStage = 2
+                failViewControllerKokera.modalPresentationStyle = .fullScreen
                 
-                // ナビゲーションスタックをクリアしてPush遷移
                 if let navigationController = self.view?.window?.rootViewController as? UINavigationController {
-                    navigationController.setViewControllers([failViewController], animated: true)
+                    navigationController.setViewControllers([failViewControllerKokera], animated: true)
                 }
+            } else if let failViewControllerKaki = storyboard.instantiateViewController(withIdentifier: identifier) as? Gameover_Kaki_ViewController {
+                failViewControllerKaki.sourceStage = 2
+                failViewControllerKaki.modalPresentationStyle = .fullScreen
+                
+                if let navigationController = self.view?.window?.rootViewController as? UINavigationController {
+                    navigationController.setViewControllers([failViewControllerKaki], animated: true)
+                }
+            } else {
+                print("Failed to instantiate ViewControllers from storyboard.")
             }
         }
     }
