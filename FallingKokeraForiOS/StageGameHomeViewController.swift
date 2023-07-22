@@ -1,9 +1,15 @@
 import UIKit
+import Firebase
+import FirebaseFirestore
+import FirebaseDatabase
+import GoogleSignIn
 import GoogleMobileAds
 
 class StageViewController: UIViewController, GADBannerViewDelegate {
     
+    var ref: DatabaseReference! = Database.database().reference()
     var bannerView: GADBannerView!
+    var stagePoint:Int = 0
     
     @IBOutlet weak var stageButton1: UIButton!
     @IBOutlet weak var stageButton2: UIButton!
@@ -15,6 +21,16 @@ class StageViewController: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var stageButton8: UIButton!
     @IBOutlet weak var stageButton9: UIButton!
     
+    @IBOutlet weak var key2: UIImageView!
+    @IBOutlet weak var key3: UIImageView!
+    @IBOutlet weak var key4: UIImageView!
+    @IBOutlet weak var key5: UIImageView!
+    @IBOutlet weak var key6: UIImageView!
+    @IBOutlet weak var key7: UIImageView!
+    @IBOutlet weak var key8: UIImageView!
+    @IBOutlet weak var key9: UIImageView!
+    
+    
     override func viewDidLoad() {
         // In this case, we instantiate the banner with desired ad size.
         bannerView = GADBannerView(adSize: GADAdSizeBanner)
@@ -25,6 +41,77 @@ class StageViewController: UIViewController, GADBannerViewDelegate {
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         bannerView.delegate = self
+        
+        //StagePintに対応したボタンの非活性設定
+        let user = Auth.auth().currentUser
+        let uid = user?.uid
+        self.ref.child("user").child(uid!).getData(completion: { error, snapshot in
+            
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            //ユーザーのStagePoint取得
+            if let dic = snapshot?.value as? [String:AnyObject]{
+                self.stagePoint = dic["StageScore"] as? Int ?? 0
+                
+                //鍵iconの表示/非表示
+                if self.stagePoint >= 1 {
+                    self.key2.isHidden = true
+                }
+                if self.stagePoint >= 2 {
+                    self.key3.isHidden = true
+                }
+                if self.stagePoint >= 3 {
+                    self.key4.isHidden = true
+                }
+                if self.stagePoint >= 4 {
+                    self.key5.isHidden = true
+                }
+                if self.stagePoint >= 5 {
+                    self.key6.isHidden = true
+                }
+                if self.stagePoint >= 6 {
+                    self.key7.isHidden = true
+                }
+                if self.stagePoint >= 7 {
+                    self.key8.isHidden = true
+                }
+                if self.stagePoint >= 8 {
+                    self.key9.isHidden = true
+                }
+                
+                //ボタンの活性/非活性
+                if self.stagePoint < 1 {
+                    self.stageButton2.isEnabled = false
+                }
+                if self.stagePoint < 2 {
+                    self.stageButton3.isEnabled = false
+                }
+                if self.stagePoint < 3 {
+                    self.stageButton4.isEnabled = false
+                }
+                if self.stagePoint < 4 {
+                    self.stageButton5.isEnabled = false
+                }
+                if self.stagePoint < 5 {
+                    self.stageButton6.isEnabled = false
+                }
+                if self.stagePoint < 6 {
+                    self.stageButton7.isEnabled = false
+                }
+                if self.stagePoint < 7 {
+                    self.stageButton8.isEnabled = false
+                }
+                if self.stagePoint < 8 {
+                    self.stageButton9.isEnabled = false
+                }
+                
+            }
+        })
+        
+        
+        
     }
     
     func addBannerViewToView(_ bannerView: GADBannerView) {
