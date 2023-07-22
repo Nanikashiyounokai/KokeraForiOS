@@ -5,7 +5,7 @@ target 'FallingKokeraForiOS' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for FallingKokeraForiOS
+  # database周りのパッケージ
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'

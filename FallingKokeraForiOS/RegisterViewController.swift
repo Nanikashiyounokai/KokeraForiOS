@@ -70,9 +70,7 @@ class RegisterViewController: UIViewController {
                     } else {
                         print("Google SignIn Success!")
                         //成功した場合は画面遷移を行う
-                        let storyboard: UIStoryboard = self.storyboard!
-                        let next = storyboard.instantiateViewController(withIdentifier: "Register2ViewController") as! Register2ViewController
-                        self.present(next, animated: true, completion: nil)
+                        self.performSegue(withIdentifier: "toRegister2", sender: nil)
                     }
                 }
     }
