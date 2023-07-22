@@ -3,6 +3,10 @@ import Firebase
 import FirebaseFirestore
 import FirebaseDatabase
 import GoogleSignIn
+import Firebase
+import FirebaseFirestore
+import FirebaseDatabase
+import GoogleSignIn
 
 class Register2ViewController: UIViewController {
     
@@ -54,10 +58,7 @@ class Register2ViewController: UIViewController {
                      "StageScore": 0] as [String : Any])
                 print("登録完了")
                 
-                let storyboard: UIStoryboard = self.storyboard!
-                let next = storyboard.instantiateViewController(withIdentifier: "navi") as! UINavigationController
-                next.modalPresentationStyle = .fullScreen
-                self.present(next, animated: true, completion: nil)
+                self.performSegue(withIdentifier: "toTop2", sender: nil)
 
 
             })

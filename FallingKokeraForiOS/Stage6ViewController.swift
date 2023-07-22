@@ -2,6 +2,10 @@ import UIKit
 import SpriteKit
 import GameplayKit
 import AVFoundation
+import Firebase
+import FirebaseFirestore
+import FirebaseDatabase
+import GoogleSignIn
 
 class Stage6ViewController: UIViewController {
 
@@ -33,7 +37,7 @@ class Stage6ViewController: UIViewController {
 }
 
 class StageScene6: SKScene, SKPhysicsContactDelegate {
-    
+    var ref: DatabaseReference! = Database.database().reference()
     var player: AVAudioPlayer?
     var getsePlayer: AVAudioPlayer?
     var playerBar: SKSpriteNode!
@@ -217,6 +221,9 @@ class StageScene6: SKScene, SKPhysicsContactDelegate {
     }
     
     func clearControlView() {
+        let user = Auth.auth().currentUser
+        let uid = user?.uid
+        self.ref.child("user").child(uid!).child("StageScore").setValue(6)
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let clearViewController = storyboard.instantiateViewController(withIdentifier: "gameclear") as? ClearViewController {

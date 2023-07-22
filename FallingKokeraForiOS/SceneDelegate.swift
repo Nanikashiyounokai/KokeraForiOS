@@ -20,30 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
-        //guard let windowScene = (scene as? UIWindowScene) else { return }
-        
-//        if let uid = Auth.auth().currentUser?.uid {
-//            Firestore.firestore().collection("users").document(uid).getDocument { (snapshot, error) in
-//                if let error = error {
-//                    print("エラー: \(error.localizedDescription)")
-//                    return
-//                }
-//
-//                self.window = UIWindow(windowScene: windowScene)
-//                let storybard = UIStoryboard(name: "Main",bundle: nil)
-//
-//                // ユーザー名が登録されているか判定
-//                if let data = snapshot?.data() {
-//                    let userName = data["name"] as? String
-//                    self.window?.rootViewController = storybard.instantiateViewController(identifier: "navi")
-//                    //firstLanch()
-//
-//                } else {
-//                    // データが存在しない場合の処理
-//                    self.window?.rootViewController = storybard.instantiateViewController(identifier: "register")
-//                }
-//            }
-//        }
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
