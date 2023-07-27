@@ -7,10 +7,15 @@
 
 import UIKit
 import GoogleMobileAds
+import Firebase
+import FirebaseFirestore
+import FirebaseDatabase
 
 class EndlessGame_before_ViewController: UIViewController, GADBannerViewDelegate {
     
-    var bannerView: GADBannerView! 
+    @IBOutlet weak var highScore: UILabel!
+    var ref: DatabaseReference! = Database.database().reference()
+    var bannerView: GADBannerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +29,21 @@ class EndlessGame_before_ViewController: UIViewController, GADBannerViewDelegate
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         bannerView.delegate = self
+        
+        let user = Auth.auth().currentUser
+        let uid = user?.uid
+        self.ref.child("user").child(uid!).getData(completion: { error, snapshot in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            //ユーザー登録済
+            let value = snapshot?.value as? [String: Any]
+            let score = value?["EndlessScore"] as? Int
+            self.highScore.text = "\(String(describing: score!))"
+            print(score!)
+        })
+        
     }
     func addBannerViewToView(_ bannerView: GADBannerView) {
       bannerView.translatesAutoresizingMaskIntoConstraints = false

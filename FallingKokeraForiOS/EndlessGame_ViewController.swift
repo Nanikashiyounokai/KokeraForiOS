@@ -2,6 +2,10 @@ import UIKit
 import SpriteKit
 import GameplayKit
 import AVFoundation
+import Firebase
+import FirebaseFirestore
+import FirebaseDatabase
+
 
 class EndlessGameController: UIViewController {
     
@@ -37,6 +41,7 @@ class EndlessGameController: UIViewController {
 
 class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
     
+    var ref: DatabaseReference! = Database.database().reference()
     var player: AVAudioPlayer?
     var getsePlayer: AVAudioPlayer?
     var playerBar: SKSpriteNode!
@@ -304,22 +309,12 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
-    
-    func clearControlView() {
-        DispatchQueue.main.async {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let clearViewController = storyboard.instantiateViewController(withIdentifier: "gameclear") as? UIViewController {
-                clearViewController.modalPresentationStyle = .fullScreen
-                
-                // ナビゲーションスタックをクリアしてPush遷移
-                if let navigationController = self.view?.window?.rootViewController as? UINavigationController {
-                    navigationController.setViewControllers([clearViewController], animated: true)
-                }
-            }
-        }
-    }
+
 
     func failControlView(withIdentifier identifier: String) {
+        let user = Auth.auth().currentUser
+        let uid = user?.uid
+        self.ref.child("user").child(uid!).child("EndlessScore").setValue(self.kakiCount)
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let failkokeraViewController = storyboard.instantiateViewController(withIdentifier: identifier) as? Endlessover_kokera_ViewController {

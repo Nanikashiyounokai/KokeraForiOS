@@ -42,6 +42,7 @@
 		95BB071A2A4EC61700C64E00 /* Stage5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */; };
 		CE033A602A64DDDA00B9CDF8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE033A5F2A64DDDA00B9CDF8 /* GoogleService-Info.plist */; };
 		CE9A971F2A6B72E500BF8A11 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A971E2A6B72E500BF8A11 /* RankingViewController.swift */; };
+		CE9A97252A720CBB00BF8A11 /* UserINfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9A97242A720CBB00BF8A11 /* UserINfoViewController.swift */; };
 		CEC7CEBB2A515CBD002462D1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7CEBA2A515CBD002462D1 /* RegisterViewController.swift */; };
 		CEC7CEBD2A515E49002462D1 /* Register2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC7CEBC2A515E49002462D1 /* Register2ViewController.swift */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,7 @@
 		95BB07192A4EC61700C64E00 /* Stage5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage5ViewController.swift; sourceTree = "<group>"; };
 		CE033A5F2A64DDDA00B9CDF8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE9A971E2A6B72E500BF8A11 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		CE9A97242A720CBB00BF8A11 /* UserINfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserINfoViewController.swift; sourceTree = "<group>"; };
 		CEC7CEBA2A515CBD002462D1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CEC7CEBC2A515E49002462D1 /* Register2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register2ViewController.swift; sourceTree = "<group>"; };
 		F12229F183D0B0515BD8791A /* Pods_FallingKokeraForiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FallingKokeraForiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +179,7 @@
 				39DA2BD22A074B6800F3BE24 /* LaunchScreen.storyboard */,
 				39DA2BD52A074B6800F3BE24 /* Info.plist */,
 				CE033A5F2A64DDDA00B9CDF8 /* GoogleService-Info.plist */,
+				CE9A97242A720CBB00BF8A11 /* UserINfoViewController.swift */,
 			);
 			path = FallingKokeraForiOS;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				95ABA42F2A627372002CC30F /* EndlessGame_before_ViewController.swift in Sources */,
 				95ABA42D2A62731C002CC30F /* Stage1_before_ViewController.swift in Sources */,
 				95816D722A51541800C53502 /* Endlessover_kaki_ViewController.swift in Sources */,
+				CE9A97252A720CBB00BF8A11 /* UserINfoViewController.swift in Sources */,
 				396D17812A3E962F0079F709 /* Stage2ViewController.swift in Sources */,
 				39CEDA7B2A3D5DEE0047A95F /* GameClearViewController.swift in Sources */,
 				95816D742A51543C00C53502 /* Endlessover_kokera_ViewController.swift in Sources */,
