@@ -49,10 +49,12 @@ class RankingViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cellUsername = cell.viewWithTag(1) as! UILabel
+        let cellScore = cell.viewWithTag(2) as! UILabel
 
         let data = rankingData[indexPath.row]
-        cell.textLabel?.text = "\(indexPath.row + 1). \(data.userName)"
-        cell.detailTextLabel?.text = "\(data.score) points"
+        cellUsername.text = "\(indexPath.row + 1). \(data.userName)"
+        cellScore.text = "\(data.score) p"
 
         return cell
     }
