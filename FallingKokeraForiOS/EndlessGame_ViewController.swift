@@ -312,8 +312,9 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
 
 
     func failControlView(withIdentifier identifier: String) {
-        let user = Auth.auth().currentUser
-        let uid = user?.uid
+//        let user = Auth.auth().currentUser
+//        let uid = user?.uid
+        let uid = UserDefaults.standard.string(forKey: "userId")
         self.ref.child("user").child(uid!).child("EndlessScore").setValue(self.kakiCount)
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

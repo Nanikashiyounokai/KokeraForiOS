@@ -13,12 +13,15 @@ import FirebaseDatabase
 
 class EndlessGame_before_ViewController: UIViewController, GADBannerViewDelegate {
     
+    @IBOutlet weak var pageTitle: UILabel!
     @IBOutlet weak var highScore: UILabel!
     var ref: DatabaseReference! = Database.database().reference()
     var bannerView: GADBannerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pageTitle.font = UIFont(name: "Baskerville-Bold", size: 30)
 
         // In this case, we instantiate the banner with desired ad size.
         bannerView = GADBannerView(adSize: GADAdSizeBanner)
@@ -30,8 +33,9 @@ class EndlessGame_before_ViewController: UIViewController, GADBannerViewDelegate
         bannerView.load(GADRequest())
         bannerView.delegate = self
         
-        let user = Auth.auth().currentUser
-        let uid = user?.uid
+//        let user = Auth.auth().currentUser
+//        let uid = user?.uid
+        let uid = UserDefaults.standard.string(forKey: "userId")
         self.ref.child("user").child(uid!).getData(completion: { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)

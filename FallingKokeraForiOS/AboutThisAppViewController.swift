@@ -4,12 +4,16 @@ import GoogleMobileAds
 
 class AboutThisAppViewController: UIViewController , GADBannerViewDelegate {
     
+    @IBOutlet weak var pageTitle: UILabel!
     var bannerView: GADBannerView!
     
     @IBOutlet weak var logo: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pageTitle.font = UIFont(name: "Baskerville-Bold", size: 30)
+        
         // In this case, we instantiate the banner with desired ad size.
         bannerView = GADBannerView(adSize: GADAdSizeBanner)
 

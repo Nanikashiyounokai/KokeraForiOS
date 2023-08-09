@@ -11,6 +11,7 @@ class StageViewController: UIViewController, GADBannerViewDelegate {
     var bannerView: GADBannerView!
     var stagePoint:Int = 0
     
+    @IBOutlet weak var selectStage: UILabel!
     @IBOutlet weak var stageButton1: UIButton!
     @IBOutlet weak var stageButton2: UIButton!
     @IBOutlet weak var stageButton3: UIButton!
@@ -42,9 +43,12 @@ class StageViewController: UIViewController, GADBannerViewDelegate {
         bannerView.load(GADRequest())
         bannerView.delegate = self
         
+        selectStage.font = UIFont(name: "Baskerville-Bold", size: 30)
+        
         //StagePintに対応したボタンの非活性設定
-        let user = Auth.auth().currentUser
-        let uid = user?.uid
+//        let user = Auth.auth().currentUser
+//        let uid = user?.uid
+        let uid = UserDefaults.standard.string(forKey: "userId")
         self.ref.child("user").child(uid!).getData(completion: { error, snapshot in
             
             guard error == nil else {
