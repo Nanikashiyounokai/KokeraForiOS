@@ -4,6 +4,8 @@ import GoogleMobileAds
 
 class Gameover_Kokera_ViewController: UIViewController , GADBannerViewDelegate {
     var sourceStage: Int? // ここに遷移元のステージ番号をセットします
+    @IBOutlet weak var numberLabel: UIImageView!
+    @IBOutlet weak var sorryLabel: UILabel!
     
     var bannerView: GADBannerView!
     
@@ -89,6 +91,36 @@ class Gameover_Kokera_ViewController: UIViewController , GADBannerViewDelegate {
             failureSoundPlayer?.play()
         } catch {
             print("音声の再生に失敗しました: \(error)")
+        }
+        
+        //画像のセット
+        sorryLabel.font = UIFont(name: "Baskerville-Bold", size: 60)
+        if sourceStage == 1 {
+            numberLabel.image = UIImage(named:"one")!
+        }
+        if sourceStage == 2 {
+            numberLabel.image = UIImage(named:"two")!
+        }
+        if sourceStage == 3 {
+            numberLabel.image = UIImage(named:"three")!
+        }
+        if sourceStage == 4 {
+            numberLabel.image = UIImage(named:"four")!
+        }
+        if sourceStage == 5 {
+            numberLabel.image = UIImage(named:"five")!
+        }
+        if sourceStage == 6 {
+            numberLabel.image = UIImage(named:"six")!
+        }
+        if sourceStage == 7 {
+            numberLabel.image = UIImage(named:"seven")!
+        }
+        if sourceStage == 8 {
+            numberLabel.image = UIImage(named:"eight")!
+        }
+        if sourceStage == 9 {
+            numberLabel.image = UIImage(named:"nine")!
         }
     }
 

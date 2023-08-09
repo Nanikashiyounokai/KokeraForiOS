@@ -41,8 +41,9 @@ class UserINfoViewController: UIViewController {
     // ユーザー情報をRealtime Databaseから読み込む
    func loadUserData() {
        // ユーザーIDを適切に設定する（例えばログインしているユーザーのIDなど）
-       let user = Auth.auth().currentUser
-       let userId = user?.uid
+//       let user = Auth.auth().currentUser
+//       let userId = user?.uid
+       let userId = UserDefaults.standard.string(forKey: "userId")
        
        // "users"ノード内のユーザー情報を取得
        self.ref.child("user").child(userId!).getData(completion: { error, snapshot in

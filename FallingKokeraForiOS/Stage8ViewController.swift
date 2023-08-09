@@ -218,9 +218,22 @@ class StageScene8: SKScene, SKPhysicsContactDelegate {
 
     
     func clearControlView() {
-        let user = Auth.auth().currentUser
-        let uid = user?.uid
-        self.ref.child("user").child(uid!).child("StageScore").setValue(8)
+//        let user = Auth.auth().currentUser
+//        let uid = user?.uid
+        let uid = UserDefaults.standard.string(forKey: "userId")
+        self.ref.child("user").child(uid!).getData(completion: { error, snapshot in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            if let userData = snapshot?.value as? [String: Any], let stageScore = userData["StageScore"] as? Int{
+                if stageScore < 8 {
+                    self.ref.child("user").child(uid!).child("StageScore").setValue(8)
+                }
+            } else {
+                print("User data not found in the database")
+            }
+        })
         DispatchQueue.main.async {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let clearViewController = storyboard.instantiateViewController(withIdentifier: "gameclear") as? ClearViewController {

@@ -6,6 +6,8 @@ import GoogleSignIn
 
 
 class RankingViewController: UIViewController, UITableViewDataSource {
+    @IBOutlet weak var pageTitle: UILabel!
+    @IBOutlet weak var pageTitle2: UILabel!
     
     var rankingData: [(userName: String, score: Int)] = []
     @IBOutlet weak var tableView: UITableView!
@@ -14,6 +16,8 @@ class RankingViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         tableView.dataSource = self
         fetchRankingData()
+        pageTitle.font = UIFont(name: "Baskerville-Bold", size: 30)
+        pageTitle2.font = UIFont(name: "Baskerville-Bold", size: 30)
         
     }
     

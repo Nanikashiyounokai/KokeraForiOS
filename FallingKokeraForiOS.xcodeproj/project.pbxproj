@@ -169,6 +169,7 @@
 				39DA2BC92A074B6400F3BE24 /* SceneDelegate.swift */,
 				39DA2BCB2A074B6400F3BE24 /* ViewController.swift */,
 				393ED5182A0E387200D7CCA0 /* GameScene.swift */,
+				CE9A97242A720CBB00BF8A11 /* UserINfoViewController.swift */,
 				9560004C2A623A5C006D7289 /* opbgm.mp3 */,
 				9560004E2A623AEF006D7289 /* playbgm.mp3 */,
 				956000502A623AFF006D7289 /* failurese.mp3 */,
@@ -179,7 +180,6 @@
 				39DA2BD22A074B6800F3BE24 /* LaunchScreen.storyboard */,
 				39DA2BD52A074B6800F3BE24 /* Info.plist */,
 				CE033A5F2A64DDDA00B9CDF8 /* GoogleService-Info.plist */,
-				CE9A97242A720CBB00BF8A11 /* UserINfoViewController.swift */,
 			);
 			path = FallingKokeraForiOS;
 			sourceTree = "<group>";

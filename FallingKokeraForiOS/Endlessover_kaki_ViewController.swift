@@ -100,6 +100,7 @@ class Endlessover_kaki_ViewController: UIViewController, GADBannerViewDelegate {
         } catch {
             print("音声の再生に失敗しました: \(error)")
         }
+        
     }
     
     @IBOutlet weak var result: UILabel!

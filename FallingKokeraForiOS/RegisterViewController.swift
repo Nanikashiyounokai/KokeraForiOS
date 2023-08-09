@@ -1,10 +1,6 @@
 //
 //  RegisterController.swift
 //  Pods
-//
-//  Created by USER on 2023/07/02.
-//
-
 import UIKit
 import Firebase
 import FirebaseFirestore
@@ -18,6 +14,9 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         // ユーザーが以前にサインインしていた場合は、アカウント登録画面をスキップ
         if let uid = Auth.auth().currentUser?.uid {
             self.ref.child("user").child(uid).getData(completion: { error, snapshot in

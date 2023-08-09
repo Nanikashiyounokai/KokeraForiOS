@@ -3,26 +3,27 @@ import Firebase
 import FirebaseFirestore
 import FirebaseDatabase
 import GoogleSignIn
-import Firebase
-import FirebaseFirestore
-import FirebaseDatabase
-import GoogleSignIn
 
 class Register2ViewController: UIViewController {
     
-    var ref: DatabaseReference! = Database.database().reference()
+    //var ref: DatabaseReference! = Database.database().reference()
 
     @IBOutlet weak var inputName: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 既に登録済みの場合、登録画面をスキップしてメイン画面に遷移
+        if let userId = UserDefaults.standard.string(forKey: "userId") {
+            self.performSegue(withIdentifier: "toTop2", sender: nil)
+        }
 
     }
     
     @IBAction func tapButton(_ sender: Any) {
         let user = Auth.auth().currentUser
         let uid = user?.uid
-        
+
         let userName = inputName.text
         
         if userName == "" {
@@ -52,14 +53,29 @@ class Register2ViewController: UIViewController {
                 (action: UIAlertAction!) -> Void in
                 
                 // RealtimeDatabaseにユーザー情報を登録
-                self.ref.child("user").child(uid!).setValue(
+//                self.ref.child("user").child(uid!).setValue(
+//                    ["EndlessScore": 0,
+//                    "Name": userName!,
+//                     "StageScore": 0] as [String : Any])
+//                print("登録完了")
+            
+                let usersRef = Database.database().reference().child("user")
+                let newUserId = usersRef.childByAutoId().key
+                    
+                usersRef.child(newUserId!).setValue(
                     ["EndlessScore": 0,
                     "Name": userName!,
-                     "StageScore": 0] as [String : Any])
-                print("登録完了")
+                     "StageScore": 0] as [String : Any]){ error, _ in
+                    if let error = error {
+                        print("Error saving user data: \(error.localizedDescription)")
+                    } else {
+                        print("User data saved successfully.")
+                        //端末内にユーザーIDを保存
+                        UserDefaults.standard.set(newUserId, forKey: "userId")
+                        self.performSegue(withIdentifier: "toTop2", sender: nil)
+                    }
+                }
                 
-                self.performSegue(withIdentifier: "toTop2", sender: nil)
-
 
             })
             // キャンセルボタンの処理
