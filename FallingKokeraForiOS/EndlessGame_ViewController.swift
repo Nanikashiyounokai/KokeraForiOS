@@ -47,7 +47,7 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!
     var kakiScoreNode: SKSpriteNode!
-    var score: Int = 0 {
+    var score: Int = 20 {
         didSet {
             scoreLabel.text = "\(score)"
             }
@@ -55,9 +55,10 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
     
     var kakiList: [SKSpriteNode] = []
     
-    var kakiCount: Int = 0 // Added line
+    var kakiCount: Int = 20 // Added line
     
     var kabukiUpperNode: SKSpriteNode!
+    var kabukiAdded = false // Add this flag
     
     override func didMove(to view: SKView) {
         backgroundColor = .white
@@ -197,14 +198,15 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
             sequence = SKAction.sequence([moveVerticalAction, removeAction])
         }
         
-        // If 20 or more kakis are obtained, rotate the sprite and add sway action
         if kakiCount >= 20 {
-            let rotateAction = SKAction.rotate(byAngle: CGFloat.random(in: -CGFloat.pi...CGFloat.pi) * 2, duration: 0.5)
+            let rotationSpeed: TimeInterval = 2.0 // Adjust this value for your desired rotation speed
+            let rotateAction = SKAction.rotate(byAngle: CGFloat.pi * 2, duration: rotationSpeed) // One full rotation over 'rotationSpeed' seconds
             let repeatForeverAction = SKAction.repeatForever(rotateAction)
             let swayAction = createSwayAction(sprite: sprite)
             let groupAction = SKAction.group([moveAction, repeatForeverAction, swayAction])
             sequence = SKAction.sequence([groupAction, removeAction])
         }
+
         
         sprite.run(sequence)
         
@@ -287,11 +289,11 @@ class EndlessGameScene: SKScene, SKPhysicsContactDelegate {
             kakiCount += 1 // Increment kaki to: sk.view, error: nil)
             
             // kabuki_upperの設定
-            if kakiCount >= 15 {
+            if kakiCount >= 15 && !kabukiAdded { // Check if it's not already added
                 addChild(kabukiUpperNode)
                 kabukiUpperNode.isHidden = false
                 startKabukiCycle()
-                
+                kabukiAdded = true // Update the flag
             }
             
         } else if contactMask == (PhysicsCategory.kokera.rawValue | PhysicsCategory.player.rawValue) {

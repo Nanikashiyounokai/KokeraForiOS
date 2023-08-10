@@ -3,9 +3,12 @@ import Firebase
 import FirebaseFirestore
 import FirebaseDatabase
 import GoogleSignIn
+import GoogleMobileAds
 
 
-class RankingViewController: UIViewController, UITableViewDataSource {
+class RankingViewController: UIViewController, UITableViewDataSource, GADBannerViewDelegate {
+    
+    var bannerView: GADBannerView!
     @IBOutlet weak var pageTitle: UILabel!
     @IBOutlet weak var pageTitle2: UILabel!
     
@@ -19,7 +22,37 @@ class RankingViewController: UIViewController, UITableViewDataSource {
         pageTitle.font = UIFont(name: "Baskerville-Bold", size: 30)
         pageTitle2.font = UIFont(name: "Baskerville-Bold", size: 30)
         
+        // In this case, we instantiate the banner with desired ad size.
+        bannerView = GADBannerView(adSize: GADAdSizeBanner)
+
+        addBannerViewToView(bannerView)
+        
+        bannerView.adUnitID = "ca-app-pub-2529783942153390/4905656710"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
+        
     }
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+      bannerView.translatesAutoresizingMaskIntoConstraints = false
+      view.addSubview(bannerView)
+      view.addConstraints(
+        [NSLayoutConstraint(item: bannerView,
+                            attribute: .bottom,
+                            relatedBy: .equal,
+                            toItem: view.safeAreaLayoutGuide,
+                            attribute: .bottom,
+                            multiplier: 1,
+                            constant: 0),
+         NSLayoutConstraint(item: bannerView,
+                            attribute: .centerX,
+                            relatedBy: .equal,
+                            toItem: view,
+                            attribute: .centerX,
+                            multiplier: 1,
+                            constant: 0)
+        ])
+     }
     
     // データベースからランキングデータを取得するメソッド
     func fetchRankingData() {

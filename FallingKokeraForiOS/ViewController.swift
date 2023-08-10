@@ -13,6 +13,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true
+        
         addBackgroundView()
         // BGMファイルのURLを取得します
         guard let bgmURL = Bundle.main.url(forResource: "opbgm", withExtension: "mp3") else {
@@ -33,7 +35,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
 
         addBannerViewToView(bannerView)
         
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = "ca-app-pub-2529783942153390/4905656710"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         bannerView.delegate = self

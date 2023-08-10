@@ -27,7 +27,7 @@ class Endlessover_kaki_ViewController: UIViewController, GADBannerViewDelegate {
 
         addBannerViewToView(bannerView)
         
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = "ca-app-pub-2529783942153390/4905656710"
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         bannerView.delegate = self

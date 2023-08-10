@@ -61,6 +61,7 @@ class Register2ViewController: UIViewController {
             
                 let usersRef = Database.database().reference().child("user")
                 let newUserId = usersRef.childByAutoId().key
+                print(newUserId)
                     
                 usersRef.child(newUserId!).setValue(
                     ["EndlessScore": 0,
