@@ -8,11 +8,13 @@ var bgmPlayer: AVAudioPlayer?
 
 class ViewController: UIViewController, GADBannerViewDelegate {
     
+    @IBOutlet weak var space: UIView!
     var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        self.view.sendSubviewToBack(space)
         addBackgroundView()
         // BGMファイルのURLを取得します
         guard let bgmURL = Bundle.main.url(forResource: "opbgm", withExtension: "mp3") else {

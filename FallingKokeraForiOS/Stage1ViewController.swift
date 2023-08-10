@@ -5,7 +5,6 @@ import AVFoundation
 import Firebase
 import FirebaseFirestore
 import FirebaseDatabase
-import GoogleSignIn
 
 class Stage1ViewController: UIViewController {
     

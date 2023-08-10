@@ -2,7 +2,6 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import FirebaseDatabase
-import GoogleSignIn
 
 
 class RankingViewController: UIViewController, UITableViewDataSource {

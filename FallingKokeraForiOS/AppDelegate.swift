@@ -1,21 +1,11 @@
-//
-//  AppDelegate.swift
-//  FallingKokeraForiOS
-//
-//  Created by 福岡　佑季 on 2023/05/07.
-//
-
 import UIKit
-
 import GoogleMobileAds //←広告用に追加
-
 import FirebaseCore
-import GoogleSignIn
+import IQKeyboardManagerSwift
 
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -23,6 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GADMobileAds.sharedInstance().start(completionHandler: nil) //←広告用に追加
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        //キーボードの設定
+        IQKeyboardManager.shared.enable = true
         return true
     }
 

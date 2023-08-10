@@ -1,9 +1,3 @@
-//
-//  UserINfoViewController.swift
-//  FallingKokeraForiOS
-//
-//  Created by USER on 2023/07/27.
-//
 
 import UIKit
 import Firebase
@@ -41,10 +35,7 @@ class UserINfoViewController: UIViewController {
     // ユーザー情報をRealtime Databaseから読み込む
    func loadUserData() {
        // ユーザーIDを適切に設定する（例えばログインしているユーザーのIDなど）
-//       let user = Auth.auth().currentUser
-//       let userId = user?.uid
        let userId = UserDefaults.standard.string(forKey: "userId")
-       
        // "users"ノード内のユーザー情報を取得
        self.ref.child("user").child(userId!).getData(completion: { error, snapshot in
            guard error == nil else {
@@ -88,8 +79,7 @@ class UserINfoViewController: UIViewController {
     // ユーザー名をRealtime Databaseに保存
     func updateUserName(_ newUserName: String) {
         // ユーザーIDを適切に設定する（例えばログインしているユーザーのIDなど）
-        let user = Auth.auth().currentUser
-        let userId = user?.uid
+        let userId = UserDefaults.standard.string(forKey: "userId")
 
         // "users"ノード内のユーザー名を更新
         self.ref.child("user").child(userId!).child("Name").setValue(newUserName) { (error, _) in

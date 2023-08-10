@@ -2,27 +2,17 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import FirebaseDatabase
-import GoogleSignIn
 
 class Register2ViewController: UIViewController {
-    
-    //var ref: DatabaseReference! = Database.database().reference()
 
     @IBOutlet weak var inputName: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 既に登録済みの場合、登録画面をスキップしてメイン画面に遷移
-        if let userId = UserDefaults.standard.string(forKey: "userId") {
-            self.performSegue(withIdentifier: "toTop2", sender: nil)
-        }
 
     }
     
     @IBAction func tapButton(_ sender: Any) {
-        let user = Auth.auth().currentUser
-        let uid = user?.uid
 
         let userName = inputName.text
         

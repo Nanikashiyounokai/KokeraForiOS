@@ -16,13 +16,13 @@ class ClearViewController: UIViewController , GADBannerViewDelegate {
     
     var successSoundPlayer: AVAudioPlayer?
     
-    
     @IBOutlet weak var numberLabel: UIImageView!
     @IBOutlet weak var nextGameButton: UIButton!
     @IBOutlet weak var successLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         
         // ボタンのインスタンスがある場合、そのタイトルを変更します。
             if sourceStage == 9 {
@@ -89,7 +89,11 @@ class ClearViewController: UIViewController , GADBannerViewDelegate {
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
         bannerView.delegate = self
+        
     }
+    
+    
+    //バナー広告
     func addBannerViewToView(_ bannerView: GADBannerView) {
       bannerView.translatesAutoresizingMaskIntoConstraints = false
       view.addSubview(bannerView)

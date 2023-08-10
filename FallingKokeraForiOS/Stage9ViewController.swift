@@ -5,7 +5,6 @@ import AVFoundation
 import Firebase
 import FirebaseFirestore
 import FirebaseDatabase
-import GoogleSignIn
 
 class Stage9ViewController: UIViewController {
 
@@ -45,7 +44,7 @@ class StageScene9: SKScene, SKPhysicsContactDelegate {
     var playerBar: SKSpriteNode!
     var scoreLabel: UILabel!
     var kakiScoreNode: SKSpriteNode!
-    var score: Int = 9 {
+    var score: Int = 0 {
         didSet {
             scoreLabel.text = "\(score)/10"
             }

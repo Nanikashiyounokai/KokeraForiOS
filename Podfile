@@ -9,9 +9,7 @@ target 'FallingKokeraForiOS' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
-  pod 'GoogleSignIn'
   pod 'IQKeyboardManagerSwift'
-  
   pod 'Google-Mobile-Ads-SDK'
 
 end

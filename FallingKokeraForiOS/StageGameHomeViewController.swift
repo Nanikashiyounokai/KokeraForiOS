@@ -2,7 +2,6 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import FirebaseDatabase
-import GoogleSignIn
 import GoogleMobileAds
 
 class StageViewController: UIViewController, GADBannerViewDelegate {
@@ -31,6 +30,10 @@ class StageViewController: UIViewController, GADBannerViewDelegate {
     @IBOutlet weak var key8: UIImageView!
     @IBOutlet weak var key9: UIImageView!
     
+    override func loadView() {
+        super.loadView()
+        
+    }
     
     override func viewDidLoad() {
         // In this case, we instantiate the banner with desired ad size.
@@ -46,8 +49,6 @@ class StageViewController: UIViewController, GADBannerViewDelegate {
         selectStage.font = UIFont(name: "Baskerville-Bold", size: 30)
         
         //StagePintに対応したボタンの非活性設定
-//        let user = Auth.auth().currentUser
-//        let uid = user?.uid
         let uid = UserDefaults.standard.string(forKey: "userId")
         self.ref.child("user").child(uid!).getData(completion: { error, snapshot in
             
